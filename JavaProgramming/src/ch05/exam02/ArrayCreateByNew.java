@@ -11,7 +11,7 @@ public class ArrayCreateByNew {
 			System.out.println("array1[" + i + "] = " + array1[i]);
 		}
 		
-		
+		System.out.println(array1[0] == array1[1]);
 		
 		//참조타입 배열
 		String[] array2 = new String[3];
@@ -21,6 +21,8 @@ public class ArrayCreateByNew {
 		for(int i=0;i<array2.length;i++){
 			System.out.println("array2[" + i + "] = " + array2[i]);
 		}
+		
+		System.out.println(array2[0].equals(array2[1]));
 		
 	}
 }
