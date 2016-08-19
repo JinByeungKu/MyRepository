@@ -22,7 +22,7 @@ public class ArrayCreateByNew {
 			System.out.println("array2[" + i + "] = " + array2[i]);
 		}
 		
-		System.out.println(array2[0].equals(array2[1]));
+		System.out.println(array2[0].equals(array2[1]));  
 		
 	}
 }
