@@ -7,7 +7,7 @@ public class ForExample {
 		double avg =0;
 		
 		for (int i = 0; i < 3; i++) {
-			int num = (int)(Math.random()*6+1);  0<=   <6
+			int num = (int)(Math.random()*6+1);
 			Snum += num;
 			System.out.println(num);
 		}
