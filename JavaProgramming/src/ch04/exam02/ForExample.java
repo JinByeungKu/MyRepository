@@ -13,7 +13,7 @@ public class ForExample {
 		}
 		avg = Snum/3;
 		System.out.println(Snum);
-		System.out.println(avg);
+		System.out.println(avg);  
 		
 	}
 }
