@@ -6,7 +6,7 @@ public class BoardExample {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		Board[] boarders = null;
+		Board[] boarders = new Board[30];;
 		String boarderNum = null;
 		String title = null;
 		String text = null;
@@ -44,7 +44,7 @@ public class BoardExample {
 				title = scanner.nextLine();
 				System.out.print("³»¿ë: ");
 				text = scanner.nextLine();
-				boarders = new Board[30];
+
 				for (int i = 0; i < boarders.length; i++) {
 
 					if (boarders[i] == null) {
