@@ -1,15 +1,20 @@
 package ch06.exam11;
 
 public class Board {
-	int no;
-	String name;
-	int score;
+	String boarderNum;
+	String titile;
+	String text;
+	String author;
+	int count;
+	int modify;
+	int select;
 	
 	Board() {}
-	Board(int no, String name, int score){
-		this.no = no;
-		this.name = name;
-		this.score = score;
+	Board(String boarderNum, String title, String author, int count){
+		this.boarderNum = boarderNum;
+		this.titile = title;
+		this.author = author;
+		this.count = count;
 	}
 	
 }

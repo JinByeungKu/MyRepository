@@ -6,7 +6,7 @@ public class BoardExample {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		String[][] boarders = new String[100][];
+		Board[] boarders = null;
 		String boarderNum = null;
 		String title = null;
 		String text = null;
@@ -22,31 +22,34 @@ public class BoardExample {
 
 			System.out.print("선택> ");
 			String choiceNum = scanner.nextLine();
-
+			
+			
+			
 			if (choiceNum.equals("1")) {
-
+	
 				System.out.println("------------------------------------------------------");
 				System.out.println("게시물 번호\t\t게시물 제목\t\t글쓴이\t\t조회수");
 				System.out.println("------------------------------------------------------");
 
-				for (String[] boarder : boarders) {
+				for (Board boarder : boarders) {
 					if (boarder != null) {
-						System.out.println(boarder[0] + "\t\t" + boarder[1] + "\t\t" + boarder[3] + "\t\t" + boarder[4]);
+						System.out.println(boarder.boarderNum + "\t\t" + boarder.titile + "\t\t" + boarder.author + "\t\t" + boarder.count);
 					}
 				}
 			} else if (choiceNum.equals("2")) { // 글쓰기
+
 				System.out.print("글쓴이: ");
 				author = scanner.nextLine();
 				System.out.print("제목: ");
 				title = scanner.nextLine();
 				System.out.print("내용: ");
 				text = scanner.nextLine();
-
+				boarders = new Board[30];
 				for (int i = 0; i < boarders.length; i++) {
+
 					if (boarders[i] == null) {
 						boarderNum = String.valueOf(i);
-						String[] boarder = { boarderNum, title, text, author, String.valueOf(count) };
-						boarders[i] = boarder;
+						boarders[i] = new Board(boarderNum, title, author, count);
 						break;
 					}
 				}
@@ -56,9 +59,9 @@ public class BoardExample {
 				System.out.println("번호\t\t제목\t\t조회수");
 				System.out.println("-----");
 
-				for (String[] boarder : boarders) { // 목록출력
-					if (boarder != null) {
-						System.out.println(boarder[0] + "\t\t" + boarder[1] + "\t\t" + boarder[4]);
+				for (int i=0;i<boarders.length;i++) { // 목록출력
+					if (boarders[i] != null) {
+						System.out.println(boarders[i].boarderNum + "\t\t" + boarders[i].titile + "\t\t" + boarders[i].count);
 					}
 				}
 				if (boarderNum != null) {
@@ -67,14 +70,14 @@ public class BoardExample {
 					// String.valueOf(count)};
 					select = Integer.parseInt(scanner.nextLine());
 						if (boarders[select] != null) {
-							System.out.println(boarders[select][2]);
+							System.out.println(boarders[select].text);
 							// System.out.println(boarder[2]);
 
 							// count = Integer.parseInt(boarder[3]);
 
-							count = Integer.parseInt(boarders[select][4]);
+							count = boarders[select].count;
 							count++;
-							boarders[select][4] = String.valueOf(count);
+							boarders[select].count = count;
 					}
 				} else
 					System.out.println("목록이 없습니다.");
@@ -90,8 +93,8 @@ public class BoardExample {
 						text = scanner.nextLine();
 						// String[] boarder= {boarderNum, title, text, author,
 						// String.valueOf(count)};
-						boarders[modify][1] = title;
-						boarders[modify][2] = text;
+						boarders[modify].titile = title;
+						boarders[modify].text = text;
 					}
 				} else
 					System.out.println("목록이 없습니다.");
