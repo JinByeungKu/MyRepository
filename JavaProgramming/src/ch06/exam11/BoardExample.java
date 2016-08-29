@@ -33,7 +33,7 @@ public class BoardExample {
 
 				for (Board boarder : boarders) {
 					if (boarder != null) {
-						System.out.println(boarder.boarderNum + "\t\t" + boarder.titile + "\t\t" + boarder.author + "\t\t" + boarder.count);
+						System.out.println(boarder.getBoarderNum() + "\t\t" + boarder.getTitile() + "\t\t" + boarder.getAuthor() + "\t\t" + boarder.getCount());
 					}
 				}
 			} else if (choiceNum.equals("2")) { // 글쓰기
@@ -49,7 +49,7 @@ public class BoardExample {
 
 					if (boarders[i] == null) {
 						boarderNum = String.valueOf(i);
-						boarders[i] = new Board(boarderNum, title, author, count);
+						boarders[i] = new Board(boarderNum, title, author, text, count);
 						break;
 					}
 				}
@@ -61,7 +61,7 @@ public class BoardExample {
 
 				for (int i=0;i<boarders.length;i++) { // 목록출력
 					if (boarders[i] != null) {
-						System.out.println(boarders[i].boarderNum + "\t\t" + boarders[i].titile + "\t\t" + boarders[i].count);
+						System.out.println(boarders[i].getBoarderNum() + "\t\t" + boarders[i].getTitile() + "\t\t" + boarders[i].getCount());
 					}
 				}
 				if (boarderNum != null) {
@@ -70,14 +70,14 @@ public class BoardExample {
 					// String.valueOf(count)};
 					select = Integer.parseInt(scanner.nextLine());
 						if (boarders[select] != null) {
-							System.out.println(boarders[select].text);
+							System.out.println(boarders[select].getText());
 							// System.out.println(boarder[2]);
 
 							// count = Integer.parseInt(boarder[3]);
 
-							count = boarders[select].count;
+							count = boarders[select].getCount();
 							count++;
-							boarders[select].count = count;
+							boarders[select].setCount(count);
 					}
 				} else
 					System.out.println("목록이 없습니다.");
@@ -93,8 +93,8 @@ public class BoardExample {
 						text = scanner.nextLine();
 						// String[] boarder= {boarderNum, title, text, author,
 						// String.valueOf(count)};
-						boarders[modify].titile = title;
-						boarders[modify].text = text;
+						boarders[modify].setTitile(title);
+						boarders[modify].setText(text);
 					}
 				} else
 					System.out.println("목록이 없습니다.");
