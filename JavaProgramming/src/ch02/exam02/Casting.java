@@ -11,9 +11,9 @@ public class Casting {
 		System.out.println(v3);
 		
 		
-		char v5 = 'วั';
+		char v5 = 'a';
 		int v6 = 'A';
-		int v7 = 'วั';
+		int v7 = 'a';
 		System.out.println(v5);
 		System.out.println(v6);
 		System.out.println(v7);
