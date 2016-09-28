@@ -6,15 +6,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
+@Controller  //패키지 상관없이 컨트롤러를 만들어라 내가 다 찾아줄께. 대신 base 패키지 위로 만드는 것은 못찾음
 public class HomeController {
    private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
    @RequestMapping("/")
-   public String index() {
-	   System.out.println("home() 실행1");
+   public String home() {
       logger.info("home() 실행");
-      return "index";
+      return "home";
+   }
+   
+   @RequestMapping("/news")  //http://localhost:8080/myapp/news로 요청을 하면 실행
+   public String news(){
+	   logger.info("news() 실행");
+	   return "news";   //view에 news.jsp가 있어야함
    }
    
 }
