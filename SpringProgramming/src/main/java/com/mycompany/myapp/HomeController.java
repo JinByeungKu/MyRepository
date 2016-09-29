@@ -15,11 +15,4 @@ public class HomeController {
       logger.info("home() 실행");
       return "home";
    }
-   
-   @RequestMapping("/news")  //http://localhost:8080/myapp/news로 요청을 하면 실행
-   public String news(){
-	   logger.info("news() 실행");
-	   return "news";   //view에 news.jsp가 있어야함
-   }
-   
 }
