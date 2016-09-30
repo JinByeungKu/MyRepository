@@ -6,10 +6,10 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
-		Exam04
+		Exam03
 		<hr/>
-		[회원 가입 폼] <br/>
-		<form method="post"  action="/myapp/exam04/join">
+		[회원가입] <br/>
+		<form action="/myapp1/exam03/join">
 			아 이 디: <input type="text" name="mid" value="fall"/> <br/>   <%--name==mid라는 파라미터 값이 됨 --%>
 			이    름: <input type="text" name="mname" value="한가을"/> <br/>
 			비밀번호: <input type="password" name="mpassword" value="12345"> <br/>

@@ -6,9 +6,8 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
-		Exam04
+		게시판
 		<hr/>
-		1. <a href="/myapp/exam04/join">회원가입 폼 요청</a>
-		2. <a href="/myapp/exam04/write">게시물 입력 폼 요청</a>
-	</body>
+		<a href="/myapp1/test">Test</a><br/>
+		</body>
 </html> 

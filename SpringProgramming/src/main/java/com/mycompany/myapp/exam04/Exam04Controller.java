@@ -1,6 +1,5 @@
 package com.mycompany.myapp.exam04;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
 import org.slf4j.Logger;
@@ -39,6 +38,19 @@ public class Exam04Controller {
 		logger.info("madrress1:" + member.getMaddress1());
 		logger.info("madrress2:" + member.getMaddress2());
 		logger.info("mbirth:" + member.getMbirth());
+		return "exam04/index";
+	}
+	
+	@RequestMapping(value="/write", method=RequestMethod.GET)
+	public String writeForm() {
+		return "exam04/writeform";
+	}
+	
+	@RequestMapping(value="/write", method=RequestMethod.POST)
+	public String write(String btitle, String bcontent) {
+		logger.info("write 요청 처리");
+		logger.info("btitle: " + btitle);
+		logger.info("bcontent: " + bcontent);
 		return "exam04/index";
 	}
 }
