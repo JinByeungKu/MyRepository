@@ -18,15 +18,24 @@ public class Exam02Controller {
 	   return "exam02/index";
    }
    
-/*   @RequestMapping("/login")
-   public String join(
+ @RequestMapping("/login")
+   public String login(
 		   @RequestParam("id") String mid,  //파라미터이름과 매개변수이름이 다를때 RequestParam을 줘서 매칭시켜준다
 		   @RequestParam("password") String mpassword) {   //index.jsp의 join?mid=user1&mname=홍길동&mage=30 파라미타 값을 받고 콘솔에 출력
 	   logger.info("login 요청 처리");
 	   logger.info("mid:" + mid);
 	   logger.info("mpassword:" + mpassword);
 	   return "exam02/index";
-   }*/
+   }
+   
+   @RequestMapping("/join")
+   public String join(String mid, String mname, String mage) {
+	   logger.info("jion 요청 처리");
+	   logger.info("mid:" + mid);
+	   logger.info("mname:" + mname);
+	   logger.info("mage:" + mage);
+	   return "exam02/index";
+   }
    
    @RequestMapping("/order")
    public String order(String pid, String pname, String pprice, String pcompany) {
