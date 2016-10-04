@@ -1,4 +1,4 @@
-package com.mycompany.myapp1.test;
+package com.mycompany.myapp1.exam04;
 
 public class Member {
 	private String bno;

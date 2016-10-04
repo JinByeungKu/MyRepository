@@ -1,4 +1,4 @@
-package com.mycompany.myapp1.test;
+package com.mycompany.myapp1.exam04;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,20 +7,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/test")
-public class TestController {
-	private static final Logger logger = LoggerFactory.getLogger(TestController.class);
+@RequestMapping("/exam04")
+public class Exam04Controller {
+	private static final Logger logger = LoggerFactory.getLogger(Exam04Controller.class);
 	
 	@RequestMapping("/index")
 	public String index() {
 		logger.info("index 요청 처리");
-		return"test/index";
+		return"exam04/index";
 	}
 	
 	@RequestMapping(value="/join", method=RequestMethod.GET)
 	public String joinform() {
 		logger.info("joinForm 요청 처리");
-		return"test/joinform";
+		return"exam04/joinform";
 	}
 	
 	@RequestMapping(value="/join", method=RequestMethod.POST)
@@ -30,7 +30,8 @@ public class TestController {
 		logger.info("btitle: " + member.getBtitle());
 		logger.info("bcontent: " + member.getBcontent());
 		logger.info("writer: " + member.getWriter());
-		return "test/index";
-		
+		return "exam04/index";
 	}
+	
+
 }
