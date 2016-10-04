@@ -24,7 +24,7 @@ public class Exam05Controller {
 		logger.info("index 요청  처리");
 		return "exam05/index";
 	}
-	
+	//
 	@RequestMapping("/index2")
 	public ModelAndView index2() {
 		logger.info("index2 요청 처리");
