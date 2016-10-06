@@ -27,6 +27,12 @@ public class Exam09Controller {
 		logger.info("ServiceA() 실행");
 		this.serviceA = serviceA;
 	}
+	
+	private ServiceB serviceB;
+	public void setServiceB(ServiceB serviceB) {
+		logger.info("ServiceB() 실행");
+		this.serviceB = serviceB;
+	}
 
 	public Exam09Controller() {
 		logger.info("Exam09Controller 객체 생성");
@@ -44,6 +50,7 @@ public class Exam09Controller {
 		a.method();
 		b.method();
 		serviceA.method();
+		serviceB.method();
 		return "redirect:/exam09/index";
 	}
 }
