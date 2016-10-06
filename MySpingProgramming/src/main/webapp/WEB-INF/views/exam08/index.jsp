@@ -6,9 +6,9 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
-		Exam04
+		Exam08
 		<hr/>
-		1. <a href="/myapp1/exam04/join">회원가입 폼 요청</a>
-		2. <a href="/myapp1/exam04/write">게시물 입력 폼 요청</a>
+		1) <a href="/myapp1/exam08/join">회원 가입</a> <br/>
+		2) <a href="/myapp1/exam08/write">게시물 쓰기</a> <br/>
 	</body>
 </html> 

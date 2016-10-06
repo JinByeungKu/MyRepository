@@ -6,9 +6,8 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
-		Exam04
+		Exam09
 		<hr/>
-		1. <a href="/myapp1/exam04/join">회원가입 폼 요청</a>
-		2. <a href="/myapp1/exam04/write">게시물 입력 폼 요청</a>
+		1) <a href="/myapp1/exam09/method1">XML 설정 파일(servlet-context.xml)을 이용</a> <br/>
 	</body>
 </html> 

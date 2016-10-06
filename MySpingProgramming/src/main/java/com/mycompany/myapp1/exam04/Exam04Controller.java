@@ -1,5 +1,7 @@
 package com.mycompany.myapp1.exam04;
 
+import java.util.Arrays;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -14,24 +16,41 @@ public class Exam04Controller {
 	@RequestMapping("/index")
 	public String index() {
 		logger.info("index 요청 처리");
-		return"exam04/index";
+		return "exam04/index";
 	}
 	
 	@RequestMapping(value="/join", method=RequestMethod.GET)
-	public String joinform() {
+	public String joinForm() {
 		logger.info("joinForm 요청 처리");
-		return"exam04/joinform";
+		return "exam04/joinform";
 	}
 	
 	@RequestMapping(value="/join", method=RequestMethod.POST)
 	public String join(Member member) {
 		logger.info("join 요청 처리");
-		logger.info("bon: " + member.getBno());
-		logger.info("btitle: " + member.getBtitle());
-		logger.info("bcontent: " + member.getBcontent());
-		logger.info("writer: " + member.getWriter());
+		logger.info("mid:" + member.getMid());
+		logger.info("mname:" + member.getMname());
+		logger.info("mpassword:" + member.getMpassword());
+		logger.info("memail:" + member.getMemail());
+		logger.info("mtel:" + member.getMtel());
+		logger.info("mjob:" + member.getMjob());
+		logger.info("mskill:" + Arrays.toString(member.getMskill()));
+		logger.info("madrress1:" + member.getMaddress1());
+		logger.info("madrress2:" + member.getMaddress2());
+		logger.info("mbirth:" + member.getMbirth());
 		return "exam04/index";
 	}
 	
-
+	@RequestMapping(value="/write", method=RequestMethod.GET)
+	public String writeForm() {
+		return "exam04/writeform";
+	}
+	
+	@RequestMapping(value="/write", method=RequestMethod.POST)
+	public String write(String btitle, String bcontent) {
+		logger.info("write 요청 처리");
+		logger.info("btitle: " + btitle);
+		logger.info("bcontent: " + bcontent);
+		return "exam04/index";
+	}
 }
