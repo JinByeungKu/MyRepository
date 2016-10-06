@@ -34,8 +34,10 @@
    <!-- ServiceB를 관리 객체 생성-->
    <beans:bean name="serviceBObj" class="com.mycompany.myapp.exam09.ServiceB"/>
    <!-- ServiceCImpl1를 관리 객체 생성-->
-   <beans:bean name="serviceCImpl" class="com.mycompany.myapp.exam09.ServiceCImpl1"/>
-   
+   <beans:bean name="serviceCImpl1" class="com.mycompany.myapp.exam09.ServiceCImpl1"/>
+   <!-- ServiceCImpl1를 관리 객체 생성-->
+   <beans:bean name="serviceCImpl2" class="com.mycompany.myapp.exam09.ServiceCImpl2"/>
+  
    <!--Exam09Controller 객체를 찾아서 가져오기-->
    <beans:bean name="exam09Controller" class="com.mycompany.myapp.exam09.Exam09Controller">
       <!--Setter 주입
@@ -45,7 +47,8 @@
       <beans:property name="b" ref="bObj"/>
       <beans:property name="serviceA" ref="serviceAObj"/>
       <beans:property name="serviceB" ref="serviceBObj"/>
-      <beans:property name="serviceC" ref="serviceCImpl"/>
+      <beans:property name="serviceC" ref="serviceCImpl1"/>
+      <beans:property name="serviceD" ref="serviceCImpl2"/>
    </beans:bean>
    
 </beans:beans>
