@@ -9,7 +9,7 @@ public class A {
 		public A() {
 			logger.info("A 객체 생성");
 		}
-		  
+		   
 		public void method() {
 			logger.info("method 실행");
 	}
