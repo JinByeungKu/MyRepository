@@ -7,7 +7,7 @@ public class ServiceB {
 		private static final Logger logger = LoggerFactory.getLogger(ServiceB.class);
 		
 		public ServiceB() {
-			logger.info("ServiceA 객체 생성");
+			logger.info("ServiceB 객체 생성");
 		}
 		
 		public void method() {
