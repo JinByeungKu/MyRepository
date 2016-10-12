@@ -12,7 +12,7 @@ public class HomeController {
 
    @RequestMapping("/")
    public String home() {
-      logger.info("home() 실행");
+      logger.info("home() 실 행");
       return "home";
    }
 }
