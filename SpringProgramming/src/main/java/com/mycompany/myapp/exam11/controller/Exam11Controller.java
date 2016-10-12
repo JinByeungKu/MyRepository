@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.mycompany.myapp.exam11.dto.Board;
 import com.mycompany.myapp.exam11.dto.Member;
 import com.mycompany.myapp.exam11.service.Exam11MemberService;
 
@@ -20,9 +19,6 @@ public class Exam11Controller {
 	
 	@Autowired
 	private Exam11MemberService memberService;
-	
-	@Autowired
-	private Exam11BoardService boardService;
 	
 	@RequestMapping("/index")
 	public String index() {
@@ -81,19 +77,6 @@ public class Exam11Controller {
 	@RequestMapping("/memberLogout")
 	public String memberLogout() {
 		logger.info("memberLogout 처리");
-		return "redirect:/exam11/index";
-	}
-	
-	@RequestMapping(value="/boardWrite", method=RequestMethod.GET)
-	public String boardWriteForm() {
-		logger.info("boardWriteForm 처리");
-		return "exam11/boardWriteForm";
-	}
-	
-	@RequestMapping(value="/boardWrite", method=RequestMethod.POST)
-	public String boardWrite(Board board) {
-		logger.info("boardWrite 처리");
-		boardService.insert(board);
 		return "redirect:/exam11/index";
 	}
 }
