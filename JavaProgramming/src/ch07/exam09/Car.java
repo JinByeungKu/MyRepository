@@ -1,38 +1,36 @@
 package ch07.exam09;
 
 public class Car {
-	
-	/*Tire[] tire = {
-			new Tire("¾Õ¿ŞÂÊ", 6),
-			new Tire("¾Õ¿À¸¥ÂÊ", 2),
-			new Tire("µÚ¿ŞÂÊ", 3),
-			new Tire("µÚ¿À¸¥ÂÊ", 4)
-	};*/
-	Tire[] tire;
-	
-	Car(){
-		tire =  new Tire[]{
-				new Tire("¾Õ¿ŞÂÊ", 6),
-				new Tire("¾Õ¿À¸¥ÂÊ", 2),
-				new Tire("µÚ¿ŞÂÊ", 3),
-				new Tire("µÚ¿À¸¥ÂÊ", 4)	
-		};
-	}
-	
-	
-	
-	int run(){
-		System.out.println("[ÀÚµ¿Â÷°¡ ´Ş¸³´Ï´Ù.]");
-		for(int i=0;i<5;i++){
-			if(tire[i].roll() == false){
-				stop();
-				return(i+1);
-			}
+	Tire frontLeftTire = new Tire("ì•ì™¼ìª½", 6);
+	Tire frontRightTire = new Tire("ì•ì˜¤ë¥¸ìª½", 2);
+	Tire backLeftTire = new Tire("ë’¤ì™¼ìª½", 3);
+	Tire backRightTire = new Tire("ë’¤ì˜¤ë¥¸", 4);
+
+	// Constructor
+
+	// Method
+	int run() {
+		System.out.println("ìë™ì°¨ê°€ ë‹¬ë¦½ë‹ˆë‹¤.");
+		if (frontLeftTire.roll() == false) {
+			stop();
+			return 1;
+		}
+		if (frontRightTire.roll() == false) {
+			stop();
+			return 2;
+		}
+		if (backLeftTire.roll() == false) {
+			stop();
+			return 3;
+		}
+		if (backRightTire.roll() == false) {
+			stop();
+			return 4;
 		}
 		return 0;
 	}
-	
-	void stop(){
-		System.out.println("[ÀÚµ¿Â÷°¡ ¸ØÃä´Ï´Ù.]");
+
+	void stop() {
+		System.out.println("ì°¨ëŸ‰ì •ì§€");
 	}
 }

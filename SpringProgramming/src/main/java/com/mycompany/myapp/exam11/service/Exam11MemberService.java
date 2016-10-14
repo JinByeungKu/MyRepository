@@ -10,18 +10,18 @@ import com.mycompany.myapp.exam11.dto.Member;
 
 @Component
 public class Exam11MemberService {
-		private static final Logger logger = LoggerFactory.getLogger(Exam11MemberService.class);
-		
-		public static final int LOGIN_SUCESS =0;
-		public static final int LOGIN_FAIL_MID = 1;
-		public static final int LOGIN_FAIL_MPASSWORD = 2;
-		
-		@Autowired
-		private Exam11MemberDao memberDao;
-		
-		public void join(Member member) {
-			logger.info("join 처리");
-			memberDao.insert(member);
+	private static final Logger logger = LoggerFactory.getLogger(Exam11MemberService.class);
+	
+	public static final int LOGIN_SUCESS = 0;
+	public static final int LOGIN_FAIL_MID = 1;
+	public static final int LOGIN_FAIL_MPASSWORD = 2;
+	
+	@Autowired
+	private Exam11MemberDao memberDao;
+	
+	public void join(Member member) {
+		logger.info("join 처리");
+		memberDao.insert(member);
 	}
 	
 	public int login(String mid, String mpassword) {
@@ -38,3 +38,6 @@ public class Exam11MemberService {
 		}
 	}
 }
+
+
+

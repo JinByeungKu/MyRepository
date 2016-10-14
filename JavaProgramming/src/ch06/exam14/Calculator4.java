@@ -1,10 +1,23 @@
 package ch06.exam14;
 
 public class Calculator4 {
+
+	//field
+	static final double PI=3.14;  //static final ë¡œ ì„ ì–¸ëœ ì´ë¦„ì€ ëŒ€ë¬¸ìë¡œ.
+
+	
+	//Constructor
+	
+	
+	//Method
+	
+	
+	//Main Method
+	public static void main(String[] args)
+	{
 		
-		static final double PI = 3.14; //fianl ÇÊµå°ªÀ» ÁÖÁö ¾Ê¾ÒÀ» °æ¿ì¿¡´Â °ªÀ» ÇÑ¹ø ÃÊ±âÈ­ÇÒ ¼öÀÖ´Ù. 
 		
-		
-		public static void main(String[] args) {
-		}
+	}
+	
 }
+

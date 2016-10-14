@@ -1,13 +1,12 @@
 package ch07.exam14;
 
-public class Dog extends Animal{
-	public Dog(){
-		this.kind = "Æ÷À¯·ù";
+public class Dog extends Animal {
+	public Dog() {
+		this.kind = "ë©ë©ì´";
 	}
-	
+
 	@Override
 	public void sound() {
-		System.out.println("¸Û¸Û");
-		
+		System.out.println("ë©ë©ë©ë©");
 	}
 }

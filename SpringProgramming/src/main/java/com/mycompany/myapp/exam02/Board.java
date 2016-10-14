@@ -6,7 +6,6 @@ public class Board {
 	private String content;
 	private int hitcount;
 	
-	
 	public int getBno() {
 		return bno;
 	}
@@ -31,6 +30,4 @@ public class Board {
 	public void setHitcount(int hitcount) {
 		this.hitcount = hitcount;
 	}
-	
-	
 }

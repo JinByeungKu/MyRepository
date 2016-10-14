@@ -1,20 +1,23 @@
 package ch08.exam01;
 
-public class Television implements RemoteControl{ //¿Àµğ¿À´Â ¸®¸ğÆ®ÄÁÆ®·Ñ·Î »ç¿ëÇÒ¼ö ÀÖ´Ù 
-
-	@Override //ÀÎÅÍÆäÀÌ½ºÀÇ Ãß»ó¸Ş¼Òµå°¡ Àß±¸ÇöµÇ¾î ÀÖ´ÂÁö¸¦ °Ë»çÇÏ´Â ±â´É
-	public void turnOn() {
-		System.out.println("TV¸¦ ÄÕ´Ï´Ù.");
-	}
-
-	@Override
-	public void turnOff() {
-		System.out.println("TV¸¦ ²ü´Ï´Ù.");
-	}
-
-	@Override
-	public void setVolume(int volume) {
-		System.out.println("ÇöÀç TV º¼·ı: " + volume);
-	}
+public class Television implements RemoteControl { //RemoteControlì„ êµ¬í˜„í•œ Television êµ¬í˜„ í´ë˜ìŠ¤ì´ë‹¤.
+																		//AudioëŠ” RemoteControlì¸í„°í˜ì´ìŠ¤ë¡œ ì‚¬ìš©í• ìˆ˜ ìˆë‹¤.
 	
+	@Override // RemoteControl ì¸í„°í˜ì´ìŠ¤ì— ìˆëŠ” ì„¤ëª…ì„œì™€ ì„ ì–¸ëœ ì¶”ìƒë©”ì†Œë“œê°€ ê°™ì€ì§€ ì»´íŒŒì¼ëŸ¬ì—ì„œ í™•ì¸í•˜ë¼.
+	public void turnOn() {// ì¶”ìƒë©”ì†Œë“œ //ì—¬ê¸°ëŠ” publicì„ ìƒëµí•˜ë©´ì•ˆëœë‹¤. publicì„ ìƒëµí•˜ë©´ defaultë¡œ
+							// ë˜ê³ 
+							// ì ‘ê·¼ì œí•œì„ ë” ê°•í•˜ê²Œ Override ëª»í•œë‹¤.
+		System.out.println("TV ON");
+	}
+
+	@Override
+	public void turnOff() {// ì¶”ìƒë©”ì†Œë“œ
+System.out.println("TV OFF");
+	}
+
+	@Override
+	public void setVolume(int volume) {// ì¶”ìƒë©”ì†Œë“œ
+System.out.println("TV Volume: "+volume);
+	}
+
 }

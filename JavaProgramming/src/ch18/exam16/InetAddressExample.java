@@ -1,17 +1,18 @@
 package ch18.exam16;
 
+import java.io.IOException;
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 public class InetAddressExample {
-	public static void main(String[] args) throws UnknownHostException {
-		InetAddress myIA = InetAddress.getLocalHost();
-		String myIp = myIA.getHostAddress();
-		System.out.println("내컴퓨터 IP: " + myIp);
-		
-		InetAddress[] naverIAs = InetAddress.getAllByName("www.naver.com"); 
-		for(InetAddress ia : naverIAs){
-			System.out.println("네이버 서버 IP: " + ia.getHostAddress());	
+	public static void main(String[] args) throws IOException {
+		InetAddress MyIA = InetAddress.getLocalHost();
+		String myIP = MyIA.getHostAddress();
+		System.out.println("내컴퓨터 IP: " + myIP);
+
+		InetAddress[] naverIAs = InetAddress.getAllByName("www.naver.com");
+		for (InetAddress ia : naverIAs) {
+			System.out.println("NAVER IP주소: " + ia.getHostAddress());
 		}
+
 	}
 }

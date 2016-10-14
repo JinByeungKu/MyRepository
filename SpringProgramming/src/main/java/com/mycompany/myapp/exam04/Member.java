@@ -11,7 +11,7 @@ public class Member {
 	private String maddress1;
 	private String maddress2;
 	private String mbirth;
-
+	
 	public String getMid() {
 		return mid;
 	}
@@ -72,6 +72,4 @@ public class Member {
 	public void setMbirth(String mbirth) {
 		this.mbirth = mbirth;
 	}
-	
-	
 }

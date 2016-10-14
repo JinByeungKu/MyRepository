@@ -5,7 +5,6 @@ public class Member {
 	private String mname;
 	
 	public Member(String mid, String mname) {
-		super();
 		this.mid = mid;
 		this.mname = mname;
 	}
@@ -25,5 +24,4 @@ public class Member {
 	public void setMname(String mname) {
 		this.mname = mname;
 	}
-	
 }

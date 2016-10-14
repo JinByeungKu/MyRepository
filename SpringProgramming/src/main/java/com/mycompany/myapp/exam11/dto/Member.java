@@ -77,7 +77,4 @@ public class Member {
 	public void setMbirth(Date mbirth) {
 		this.mbirth = mbirth;
 	}
-
-	
-	
 }

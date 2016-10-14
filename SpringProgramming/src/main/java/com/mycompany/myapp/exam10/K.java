@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class K {
 	private static final Logger logger = LoggerFactory.getLogger(K.class);
 	
-	@ Autowired
+	@Autowired
 	private G g;
 	
 	@Autowired

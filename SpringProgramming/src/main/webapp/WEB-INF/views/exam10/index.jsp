@@ -1,4 +1,4 @@
-<%@ page contentType = "text/html;charset=UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -11,5 +11,5 @@
 		1) <a href="/myapp/exam10/method1">Setter 주입</a> <br/>
 		2) <a href="/myapp/exam10/method2">생성자 주입</a> <br/>
 		3) <a href="/myapp/exam10/method3">Field 주입</a> <br/>
-	</body>
-</html> 
+ 	</body>
+</html>

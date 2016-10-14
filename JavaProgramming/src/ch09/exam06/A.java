@@ -2,16 +2,16 @@ package ch09.exam06;
 
 public class A {
 	int field = 10;
-	public void method(){
-		//B b = new B(); ¸Ş¼Òµå³»ºÎ¿¡¼­´Â ¼ø¼­¸¦ µûÁø´Ù.
-		final int local = 10;
-		class B{
-			void method(){
+
+	public void method() {
+		final int local = 10; //final ë¶™íˆëŠ” ì´ìœ  : ì»´íŒŒì¼ 1.7ì´í•˜ë²„ì „ì—ì„œ ì»´íŒŒì¼ì´ ì•ˆë¨.;
+		class B { // ë¡œì»¬í´ë˜ìŠ¤
+			void method() {
 				field = 5;
 				//local = 5;
 				int result = local + field;
 			}
 		}
-		
+		B b = new B();
 	}
 }

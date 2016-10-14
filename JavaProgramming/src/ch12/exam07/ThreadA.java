@@ -7,12 +7,14 @@ public class ThreadA extends Thread {
 	@Override
 	public void run() {
 		while (!stop) {
-			if (work == Work.CONTINUE) {
-				System.out.println("ThreadB 작업 내용");
-			} else if(work == Work.CONTINUE){
-				Thread.yield();
+			if (work ==Work.CONTINUE) {
+				System.out.println("ThreadA 작업 내용");
+				
+			} else if(work ==Work.PAUAE) {
+					Thread.yield(); //무의미한 무한반복을 막기위해서 yield를 호출한다.
 			}
 		}
-		System.out.println("ThreadB 종료");
+		System.out.println("ThreadA 종료");
 	}
+
 }

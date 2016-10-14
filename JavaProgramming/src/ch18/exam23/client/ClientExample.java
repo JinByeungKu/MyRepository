@@ -24,26 +24,24 @@ public class ClientExample extends Application {
 			@Override
 			public void run() {
 				try {
-					// 연결요청
 					socket = new Socket();
 					socket.connect(new InetSocketAddress("192.168.0.48", 5001));
 					Platform.runLater(new Runnable() {
 						public void run() {
-							displayText("[연결 완료:" + socket.getRemoteSocketAddress() + "]");
+							displayText("[연결완료" + socket.getRemoteSocketAddress() + "]");
 							btnConn.setText("stop");
-							btnSend.setDisable(false);
+							btnSend.setDisable(false); // send버튼 활성화
 						};
 					});
 				} catch (Exception e) {
 					Platform.runLater(new Runnable() {
 						public void run() {
-							displayText("[서버통신 안됨]");
-							if(socket != null && !socket.isClosed()){
+							displayText("[서버 통신 안됨]");
+							if (socket != null && !socket.isClosed()) {
 								stopClient();
 							}
 						};
 					});
-					return;
 				}
 				receive();
 			}
@@ -56,37 +54,39 @@ public class ClientExample extends Application {
 			try {
 				socket.close();
 			} catch (IOException e) {
+				e.printStackTrace();
 			}
-
-			Platform.runLater(new Runnable() {
-				public void run() {
-					displayText("[연결 끊음]");
-					btnConn.setText("start");
-					btnSend.setDisable(true);
-				};
-			});
 		}
+		Platform.runLater(new Runnable() {
+			public void run() {
+				displayText("[연결 끊음]");
+				btnConn.setText("start");
+				btnSend.setDisable(true); // send버튼 활성화
+			};
+		});
 	}
 
 	void receive() {
-		while(true){
-			try{
-				InputStream is = socket.getInputStream();
-				byte[] values = new byte[1024];
-				int byteNum = is.read(values);
-				if(byteNum == -1){
+		while (true) {
+			try {
+				InputStream is = socket.getInputStream(); // 클라이언트에서 보낸 데이터 읽기
+				byte[] values = new byte[1024]; // 1024바이트만큼씩 받는다
+				int byteNum = is.read(values); // 서버에서 데이터가 언제올찌 모르기때문에 예외발생될수
+												// 있다
+				if (byteNum == -1) {
 					throw new IOException();
-				}
+				} // 예외 발생시키기
 				String data = new String(values, 0, byteNum, "UTF-8");
 				Platform.runLater(new Runnable() {
 					public void run() {
-						displayText("[받기 완료]" +" "+ data);
+						displayText("[받기완료: " + data + "]");
 					};
 				});
-			} catch(Exception e) {
+
+			} catch (Exception e) {
 				Platform.runLater(new Runnable() {
 					public void run() {
-						displayText("[서버 통신 안됨]");
+						displayText("[서버통신안됨");
 					};
 				});
 				stopClient();
@@ -96,28 +96,28 @@ public class ClientExample extends Application {
 	}
 
 	void send(String data) {
-		Thread thread = new Thread(){
+		Thread thread = new Thread() {
 			@Override
 			public void run() {
-				try{
+				try {
 					OutputStream os = socket.getOutputStream();
 					byte[] values = data.getBytes("UTF-8");
-					os.write(values);
+					os.write(values); // 서버가 열려있지 않을때 예외 발생
 					os.flush();
 					Platform.runLater(new Runnable() {
 						public void run() {
 							displayText("[보내기 완료]");
+							
 						};
 					});
-				} catch(Exception e){
+				} catch (Exception e) {
 					Platform.runLater(new Runnable() {
 						public void run() {
-							displayText("[서버 통신 안됨]");
+							displayText("[서버통신안됨]");
 						};
 					});
 					stopClient();
 				}
-				
 			}
 		};
 		thread.start();
@@ -173,6 +173,7 @@ public class ClientExample extends Application {
 
 	void displayText(String text) {
 		txtDisplay.appendText(text + "\n");
+		txtInput.setText("");
 	}
 
 	public static void main(String[] args) {

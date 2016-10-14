@@ -1,11 +1,14 @@
 package ch08.exam07;
 
 public interface Vehicle {
-	//Constant
+
+	//상수(Constant)
 	
-	//Abstract Method
+	//추상메소드(Abstract Method)
 	void run();
-	//Default Method
 	
-	//Static Method
+	//디폴트메소드(Default Method)
+	
+	//정적메소드(Static Method)
+
 }

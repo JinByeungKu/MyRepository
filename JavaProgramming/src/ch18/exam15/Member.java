@@ -2,23 +2,30 @@ package ch18.exam15;
 
 import java.io.Serializable;
 
-public class Member implements Serializable{
-	private static final long serialVersionUID = -7614355132400340926L;
+public class Member implements Serializable {
+	private static final long serialVersionUID = -2047290294772251137L;
 	private String mid;
 	private String mname;
-	private static String nation = "한국";
+	private static String nation = "KOREA";
 	private transient String mpassword;
 	private int mage;
 	private String job;
-	
-	
-	public Member(String mid, String mname, String mpassword, int mage){
+
+	public Member(String mid, String mname, String mpassword, int mage) {
 		this.mid = mid;
 		this.mname = mname;
 		this.mpassword = mpassword;
 		this.mage = mage;
 	}
-	
+
+	public static String getNation() {
+		return nation;
+	}
+
+	public static void setNation(String nation) {
+		Member.nation = nation;
+	}
+
 	public String getMid() {
 		return mid;
 	}
@@ -33,14 +40,6 @@ public class Member implements Serializable{
 
 	public void setMname(String mname) {
 		this.mname = mname;
-	}
-	
-	public static String getNation() {
-		return nation;
-	}
-
-	public static void setNation(String nation) {
-		Member.nation = nation;
 	}
 
 	public String getMpassword() {
@@ -59,7 +58,4 @@ public class Member implements Serializable{
 		this.mage = mage;
 	}
 
-	
 }
-
-	

@@ -1,22 +1,26 @@
 package ch06.exam04;
 
 public class Person {
-	//Field
+
+	// 필드Field
 	String name;
 	String sex;
 	int age;
 	double height;
 	boolean married;
-	
-	
-	//Constructor
-	//�ʵ��ʱ�ȭ Contstructor
-	public Person(String name, String sex, int age, double height) {
-		this.name = name;
-		this.sex = sex;
+
+	// 생성자Constructor
+	Person(String name, String sex, int age, double  height, boolean married) {
+		this.name=name;
+		this.sex=sex;
 		this.age = age;
-		this.height =  height;
+		this.height=height;
+		this.married=married;
+		
+		System.out.println(name+"\t"+sex+"\t"+age+"\t"+height+"\t"+married);
+		
 	}
-	
-	//Method
+
+	// 메소드Method
+
 }

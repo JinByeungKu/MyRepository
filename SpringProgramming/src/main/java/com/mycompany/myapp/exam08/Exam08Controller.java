@@ -5,12 +5,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mycompany.myapp.exam01.Exam01Controller;
 
 @Controller
 @RequestMapping("/exam08")
 public class Exam08Controller {
-		private static final Logger logger = LoggerFactory.getLogger(Exam08Controller.class);
-
+	private static final Logger logger = LoggerFactory.getLogger(Exam08Controller.class);
+	
 	@RequestMapping("/index")
 	public String index() {
 		logger.info("index 처리");
@@ -32,6 +33,6 @@ public class Exam08Controller {
 	@RequestMapping("/list")
 	public String list() {
 		logger.info("list 처리");
-		return "/exam08/list";
+		return "exam08/list";
 	}
 }

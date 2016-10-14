@@ -12,27 +12,27 @@ import com.mycompany.myapp.exam02.Exam02Controller;
 @Controller
 @RequestMapping("/exam03")
 public class Exam03Controller {
-	   private static final Logger logger = LoggerFactory.getLogger(Exam02Controller.class);
-	   
+	private static final Logger logger = LoggerFactory.getLogger(Exam03Controller.class);
+	
 	@RequestMapping("/index")
-		public String index(){
-			logger.info("index 요청 처리");
-			return "exam03/index";
+	public String index() {
+		logger.info("index 요청 처리");
+		return "exam03/index";
 	}
 	
 	@RequestMapping("/join")
-	public String join(Member member){
+	public String join(Member member) {
 		logger.info("join 요청 처리");
-		logger.info("mid:" + member.getMid());
-		logger.info("mname:" + member.getMname());
-		logger.info("mpassword:" + member.getMpassword());
-		logger.info("memail:" + member.getMemail());
-		logger.info("mtel:" + member.getMtel());
-		logger.info("mjob:" + member.getMjob());
-		logger.info("mskill:" + Arrays.toString(member.getMskill()));
-		logger.info("madrress1:" + member.getMaddress1());
-		logger.info("madrress2:" + member.getMaddress2());
-		logger.info("mbirth:" + member.getMbirth());
+		logger.info("mid: " + member.getMid());
+		logger.info("mname: " + member.getMname());
+		logger.info("mpassword: " + member.getMpassword());
+		logger.info("memail: " + member.getMemail());
+		logger.info("mtel: " + member.getMtel());
+		logger.info("mjob: " + member.getMjob());
+		logger.info("mskill: " + Arrays.toString(member.getMskill()));
+		logger.info("maddress1: " + member.getMaddress1());
+		logger.info("maddress2: " + member.getMaddress2());
+		logger.info("mbirth: " + member.getMbirth());
 		return "exam03/index";
-}
+	}
 }

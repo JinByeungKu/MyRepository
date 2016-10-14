@@ -1,4 +1,4 @@
-<%@ page contentType = "text/html;charset=UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -6,7 +6,7 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
-		exam01
+		Exam01
 		<hr/>
 		<a href="/myapp/exam01/join">가입</a> <br/>
 		<a href="/myapp/exam01/login">로그인</a> <br/>

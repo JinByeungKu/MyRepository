@@ -1,12 +1,18 @@
 package ch12.exam09;
 
 public class StopFlagExample {
-	public static void main(String[] args) throws InterruptedException {
-		PrintThread1 pt = new PrintThread1();
-		pt.start();
-		
-		Thread.sleep(3000);
-		 
-		pt.setStop(true);    //스레드를 안전하게 종료시키는 첫번째 방법
-	}
+public static void main(String[] args) {
+	
+	PrintThread1 printThread1=new PrintThread1();
+	
+	printThread1.start();
+	
+	
+	try {	Thread.sleep(3000);} catch (InterruptedException e) {}
+//	printThread1.stop(); //그냥종료된다.
+	printThread1.setStop(true);//안전하게 종료된다
+	
+	
+	
+}
 }

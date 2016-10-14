@@ -1,37 +1,36 @@
 package ch06.exam09;
 
 public class Car {
-	//Field
+
+	// Field
 	int gas;
-	
-	//Constructor
-	
-	
-	//Method
-	void setGas(int gas){
+	// Constructor
+
+	// Method
+	void setGas(int gas) {
 		this.gas = gas;
 	}
-	
-	boolean isLeftGas(){
-		if(gas == 0){
-			System.out.println("gas°¡ ¾ø½À´Ï´Ù.");
+
+	boolean isLeftGas() {
+		if (gas == 0) {
+			System.out.println("gasì—†ë‹¤");
 			return false;
-		}else {
-			System.out.println("gas°¡ ÀÖ½À´Ï´Ù.");
+		} else {
+			System.out.println("gasìžˆë‹¤");
 			return true;
 		}
 	}
 	
 	void run(){
 		while(true){
-			if(gas > 0){
-				System.out.println("¸ØÃã´Ï´Ù.(gas ÀÜ·®: " + gas + ")");
-				gas -= 1;
-			}else {
-				System.out.println("¸ØÃã´Ï´Ù.(gas ÀÜ·®: " + gas + ")");
+			if(gas>0){
+				System.out.println("ë‹¬ë¦½ë‹ˆë‹¤.(gas ìž”ëŸ‰:"+gas+")");
+				gas--;
+			}else{
+				System.out.println("ë©ˆì¶¥ë‹ˆë‹¤.(gas ìž”ëŸ‰:"+gas+")");
 				return;
 			}
 		}
-		
 	}
+
 }

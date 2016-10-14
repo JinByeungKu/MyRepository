@@ -3,7 +3,7 @@ package ch11.exam03;
 public class SmartPhone {
 	private String company;
 	private String os;
-	
+
 	public SmartPhone(String company, String os) {
 		this.company = company;
 		this.os = os;
@@ -11,6 +11,8 @@ public class SmartPhone {
 	
 	@Override
 	public String toString() {
-		return company + "-" + os;
+	
+		return company + ","+os;
+	
 	}
 }

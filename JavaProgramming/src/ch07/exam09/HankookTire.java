@@ -1,18 +1,23 @@
 package ch07.exam09;
 
-public class HankookTire extends Tire{
-	public HankookTire(String location, int maxRotation){
+public class HankookTire extends Tire {
+
+	// Field
+
+	// Constructor
+	public HankookTire(String location, int maxRotation) {
 		super(location, maxRotation);
 	}
-	
+
+	// Method
 	@Override
 	public boolean roll() {
 		++accumulatedRotation;
-		if(accumulatedRotation < maxRotation){
-			System.out.println(location + "HankookTire ¼ö¸í: " + (maxRotation-accumulatedRotation) + "È¸");
+		if (accumulatedRotation < maxRotation) {
+			System.out.println(location + "HankkokTire ìˆ˜ëª…: " + (maxRotation - accumulatedRotation) + "íšŒ");
 			return true;
 		} else {
-			System.out.println("***" + location + "HankookTire ÆãÅ© ***");
+			System.out.println("***" + location + "HankookTire íŽ‘í¬***");
 			return false;
 		}
 	}

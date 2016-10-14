@@ -1,7 +1,10 @@
 package ch09.exam01;
 
 public class A {
-	public class B{
-		
-	}
+//FIeld
+	//Constructor
+	//Method
+	//Nested Class
+	public class B {	}
+	
 }

@@ -2,16 +2,15 @@ package ch11.exam05;
 
 public class Employee {
 	private int eno;
-	
-	public Employee(int eno){
+
+	public Employee(int eno) {
 		this.eno = eno;
-		
-		System.out.println("Employee(" + eno + ")°¡ ¸Ş¸ğ¸®¿¡ »ı¼ºµÊ");
+		System.out.println("Employee(" + eno + ")ê°€ ë©”ëª¨ë¦¬ì— ìƒì„±ë¨");		
 	}
-	
 	
 	@Override
 	protected void finalize() throws Throwable {
-		System.out.println("Employee(" + eno + ")°¡ ¸Ş¸ğ¸®¿¡¼­ Á¦°ÅµÊ");
-	}
+		System.out.println("Employee(" + eno + ")ê°€ ë©”ëª¨ë¦¬ì— ì œê±°ë¨");
+		}
+	
 }

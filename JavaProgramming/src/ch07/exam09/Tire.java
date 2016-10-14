@@ -1,22 +1,26 @@
 package ch07.exam09;
 
 public class Tire {
+
+	//Field
 	public int maxRotation;
 	public int accumulatedRotation;
 	public String location;
 	
-	public Tire(String location, int maxRotation) {
-		this.location = location;
-		this.maxRotation = maxRotation;
-	}
+	//Constructor
+	public Tire(String location, int maxRotation){
+		this.location=location;
+		this.maxRotation=maxRotation;
+		}
 	
+	//Method
 	public boolean roll(){
 		++accumulatedRotation;
-		if(accumulatedRotation < maxRotation){
-			System.out.println(location + "Tire ¼ö¸í: " + (maxRotation-accumulatedRotation) + "È¸");
+		if(accumulatedRotation<maxRotation){
+			System.out.println(location + "Tire ìˆ˜ëª…: "+(maxRotation-accumulatedRotation)+"íšŒ");
 			return true;
-		} else {
-			System.out.println("***" + location + "Tire ÆãÅ© ***");
+		}else{
+			System.out.println("***"+location + "Tire íŽ‘í¬***");
 			return false;
 		}
 	}

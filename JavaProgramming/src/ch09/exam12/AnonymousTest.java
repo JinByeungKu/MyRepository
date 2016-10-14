@@ -1,20 +1,20 @@
 package ch09.exam12;
 
 public class AnonymousTest {
-	private RemoteControl rc = new RemoteControl(){};  //필드를 초기화
-	
-	
+
+	// FIeld
+	private RemoteControl rc = new RemoteControl() {};
+
+	// Constructor
 	public AnonymousTest(){
-		RemoteControl rc = new RemoteControl(){};   //변수 초기화
+		RemoteControl rc = new RemoteControl(){};
 	}
-	
-	public void method1(RemoteControl rc){
-		
+	// Method
+
+	public void method1(RemoteControl rc) {
 	}
-	
+
 	public void method2(){
-		method1(new RemoteControl() {
-			
-		});
+		method1(new RemoteControl() { });
 	}
 }

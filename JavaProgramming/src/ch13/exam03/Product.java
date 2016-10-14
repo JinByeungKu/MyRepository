@@ -1,8 +1,8 @@
 package ch13.exam03;
 
 public class Product<T, M> {
-	private T kind;
-	private M model;
+	private T kind; // 제네릭 선언
+	private M model; // 제네릭 선언
 	
 	public T getKind() {
 		return kind;
@@ -16,4 +16,7 @@ public class Product<T, M> {
 	public void setModel(M model) {
 		this.model = model;
 	}
+
+	
+
 }

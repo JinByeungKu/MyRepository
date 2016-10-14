@@ -1,25 +1,25 @@
 package ch07.exam01;
 
 public class DmbCellPhoneExample {
+
 	public static void main(String[] args) {
-		DmbCellPhone dmbCellPhone = new DmbCellPhone("ÀÚ¹ÙÆù", "°ËÁ¤", 10);
+		DmbCellPhone dmbCellPhone = new DmbCellPhone("ìë°”í°","ê²€ì •",10);
 		
-		System.out.println("¸ğµ¨: " + dmbCellPhone.model);
-		System.out.println("¸ğµ¨: " + dmbCellPhone.color);
-		
-		System.out.println("Ã¤³Î: " + dmbCellPhone.channel);
-		
+		System.out.println("model : "+ dmbCellPhone.model);//ìƒì†ë°›ì€ê±°ì„
+		System.out.println("color : "+ dmbCellPhone.color);  //ìƒì†ë°›ì€ê²ƒì„
+		System.out.println("channel : " + dmbCellPhone.channel);//DmbCellPhon ë‚´ë¶€ë¥¼ ì¶œë ¥í•¨
+
 		dmbCellPhone.powerOn();
 		dmbCellPhone.bell();
-		
-		dmbCellPhone.sendVoice("¿©º¸¼¼¿ä");
-		dmbCellPhone.receiveVoice("¾È³çÇÏ¼¼¿ä! Àú´Â È«±æµ¿ÀÎµ¥¿ä");
-		dmbCellPhone.sendVoice("¾Æ~¿¹ ¹İ°©½À´Ï´Ù.");
-		dmbCellPhone.hangUp();
-		
+		dmbCellPhone.sendVoice("ì—¬ë³´ìˆ‘");
+		dmbCellPhone.receiveVoice("ë‚˜ì•¼ë‚˜");
+		System.out.println();
 		dmbCellPhone.turnOnDmb();
 		dmbCellPhone.changeChannelDmb(12);
 		dmbCellPhone.turnOffDmb();
 		
+		dmbCellPhone.powerOff();
+		
 	}
+
 }

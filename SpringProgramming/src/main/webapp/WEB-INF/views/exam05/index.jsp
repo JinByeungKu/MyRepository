@@ -1,4 +1,4 @@
-<%@ page contentType = "text/html;charset=UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -8,8 +8,8 @@
 	<body>
 		Exam05
 		<hr/>
-		1. <a href="/myapp/exam05/index">String 리턴</a>
-		2. <a href="/myapp/exam05/index2">ModelAndView 리턴</a>
-		3. <a href="/myapp/exam05/index3">void 리턴</a>
+		1. <a href="/myapp/exam05/index">String 리턴</a> <br/>
+		2. <a href="/myapp/exam05/index2">ModelAndView 리턴</a> <br/>
+		3. <a href="/myapp/exam05/index3">void</a> <br/>
 	</body>
-</html> 
+</html>

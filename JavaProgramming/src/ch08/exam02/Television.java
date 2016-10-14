@@ -1,29 +1,31 @@
 package ch08.exam02;
 
-public class Television implements RemoteControl{ //¿Àµð¿À´Â ¸®¸ðÆ®ÄÁÆ®·Ñ·Î »ç¿ëÇÒ¼ö ÀÖ´Ù 
+public class Television implements RemoteControl { // RemoteControlì„ êµ¬í˜„í•œ Television êµ¬í˜„ í´ëž˜ìŠ¤ì´ë‹¤.
+													// AudioëŠ”RemoteControlì¸í„°íŽ˜ì´ìŠ¤ë¡œ ì‚¬ìš©í• ìˆ˜ìžˆë‹¤.
 	private int volume;
-	
-	
-	@Override //ÀÎÅÍÆäÀÌ½ºÀÇ Ãß»ó¸Þ¼Òµå°¡ Àß±¸ÇöµÇ¾î ÀÖ´ÂÁö¸¦ °Ë»çÇÏ´Â ±â´É
-	public void turnOn() {
-		System.out.println("TV¸¦ ÄÕ´Ï´Ù.");
+
+	@Override // RemoteControl ì¸í„°íŽ˜ì´ìŠ¤ì— ìžˆëŠ” ì„¤ëª…ì„œì™€ ì„ ì–¸ëœ ì¶”ìƒë©”ì†Œë“œê°€ ê°™ì€ì§€ ì»´íŒŒì¼ëŸ¬ì—ì„œ í™•ì¸í•˜ë¼.
+	public void turnOn() {// ì¶”ìƒë©”ì†Œë“œ //ì—¬ê¸°ëŠ” publicì„ ìƒëžµí•˜ë©´ì•ˆëœë‹¤. publicì„ ìƒëžµí•˜ë©´
+							// defaultë¡œë˜ê³ 
+							// ì ‘ê·¼ì œí•œì„ ë” ê°•í•˜ê²Œ Override ëª»í•œë‹¤.
+		System.out.println("TV ON");
 	}
 
 	@Override
-	public void turnOff() {
-		System.out.println("TV¸¦ ²ü´Ï´Ù.");
+	public void turnOff() {// ì¶”ìƒë©”ì†Œë“œ
+		System.out.println("TV OFF");
 	}
 
 	@Override
-	public void setVolume(int volume) {
-		if(volume>RemoteControl.MAX_VOLUME){
-			this.volume = RemoteControl.MAX_VOLUME;
-		} else if(volume < RemoteControl.MIN_VOLUME){
-			this.volume = RemoteControl.MIN_VOLUME;
-		} else{
-			this.volume = volume;
+	public void setVolume(int volume) {// ì¶”ìƒë©”ì†Œë“œ
+		if (volume > RemoteControl.MAX_VOLUME) {
+			this.volume=RemoteControl.MAX_VOLUME;
+		}else if(volume<RemoteControl.MIN_VOLUME){
+			this.volume=RemoteControl.MIN_VOLUME;
+		}else{
+			this.volume=volume;
 		}
-		System.out.println("ÇöÀç TV º¼·ý: " + volume);
+		System.out.println("Volume: "+volume);
 	}
-	
+
 }

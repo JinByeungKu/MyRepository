@@ -6,6 +6,6 @@ public class Television {
 	static String info;
 	
 	static {
-		info = company + "-" + model;
+		info=company + "-"+model;
 	}
 }

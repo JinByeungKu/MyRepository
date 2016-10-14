@@ -1,5 +1,5 @@
 package ch07.exam07;
 
-public class C extends A{
+public class C extends A {
 
 }

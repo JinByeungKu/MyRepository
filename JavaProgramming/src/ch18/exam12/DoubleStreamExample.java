@@ -8,21 +8,20 @@ import java.io.Reader;
 
 public class DoubleStreamExample {
 	public static void main(String[] args) throws IOException {
-/*		InputStream is = System.in;
+		/*InputStream is = System.in;
 		Reader reader = new InputStreamReader(is);
-		while(true){
-			int value = reader.read();
-			if(value == 13) break;
-			char data = (char)value;
+		while (true) {
+			int vlaue = reader.read();
+			if (vlaue == 13) break;
+			char data = (char) vlaue;
 			System.out.print(data);
 		}*/
-		
+
 		InputStream is = System.in;
-		Reader reader = new InputStreamReader(is);
-		BufferedReader br = new BufferedReader(reader);  //보조스트림을 2개 달앗음
-		
-		String data = br.readLine();   //문자열을 여러개 읽어줌
+		Reader reader = new InputStreamReader(is); //보조스트림
+		BufferedReader br = new BufferedReader(reader); //보조스트림
+		String data = br.readLine();
 		System.out.println(data);
-		
+			
 	}
 }

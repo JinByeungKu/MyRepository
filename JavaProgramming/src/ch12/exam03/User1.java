@@ -1,19 +1,19 @@
 package ch12.exam03;
 
-public class User1 extends Thread{
-	
-	
+public class User1 extends Thread {
 	private Calculator calculator;
+
 	
 	public void setCalculator(Calculator calculator) {
-		setName("User1");
 		this.calculator = calculator;
-		
+		setName("user1");
 	}
 
-
+	
+	
 	@Override
 	public void run() {
 		calculator.setMemory(100);
 	}
+	
 }

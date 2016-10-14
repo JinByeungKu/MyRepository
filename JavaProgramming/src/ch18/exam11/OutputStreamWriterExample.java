@@ -7,19 +7,23 @@ import java.io.Writer;
 
 public class OutputStreamWriterExample {
 	public static void main(String[] args) throws IOException {
+
 		OutputStream os = System.out;
-		
-		String data  = "가";
+
+		String data = "가";
 		
 		/*byte[] values = data.getBytes();
-		for(int i=0;i<values.length;i++){
+		for (int i = 0; i < values.length; i++) {
 			os.write(values[i]);
 		}
 		os.flush();
-		//os.close();
-*/	
-		Writer writer = new OutputStreamWriter(os);
+		os.close();*/
+		
+		Writer writer = new OutputStreamWriter(os);		
 		writer.write(data);
 		writer.flush();
+		
+		
+		
 	}
 }

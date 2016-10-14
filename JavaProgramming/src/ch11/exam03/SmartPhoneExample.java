@@ -1,11 +1,11 @@
 package ch11.exam03;
 
 public class SmartPhoneExample {
-	public static void main(String[] args) {
-		SmartPhone myPhone = new SmartPhone("±¸±Û", "¾Èµå·ÎÀÌµå");
-		
-		String strObj = myPhone.toString();
-		System.out.println(strObj);
-		System.out.println(myPhone);
-	}
+public static void main(String[] args) {
+	SmartPhone myPhone = new SmartPhone("êµ¬ê¸€","ì•ˆë“œë¡œì´ë“œ");
+	
+	String strObj = myPhone.toString();
+	System.out.println(strObj);
+	System.out.println(myPhone);
+}
 }

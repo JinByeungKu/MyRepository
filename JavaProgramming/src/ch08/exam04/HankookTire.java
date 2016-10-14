@@ -4,7 +4,8 @@ public class HankookTire implements Tire{
 
 	@Override
 	public void roll() {
-		System.out.println("ÇÑ±¹Å¸ÀÌ¾î°¡ ±¼·¯°©´Ï´Ù.");
+		System.out.println("í•œêµ­íƒ€ì´ì–´ êµ´ëŸ¬ê°");
+		
 	}
-	
+
 }

@@ -1,12 +1,12 @@
 package ch07.exam13;
 
-public class SmartPhone extends Phone{
-	public void internet(){
-		System.out.println("인터넷을 이용합니다.");
+public class SmartPhone extends Phone {
+	public void internet() {
+		System.out.println("internet...");
 	}
-	
+
 	@Override
 	public void ring() {
-		System.out.println("따르르릉");
+		System.out.println("SmartPhone Bellllllllllll");
 	}
 }

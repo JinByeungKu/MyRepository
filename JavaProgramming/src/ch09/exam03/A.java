@@ -1,13 +1,16 @@
 package ch09.exam03;
 
 public class A {
-	public static Object B;
-
-	public void method(){
-		class B{
-			
+	// FIeld
+	// Constructor
+	// Method
+	public void method() {
+		class B {
+			// Field
+			// Constructor
+			// MEthod
 		}
+		B b = new B();
+
 	}
-
-
 }

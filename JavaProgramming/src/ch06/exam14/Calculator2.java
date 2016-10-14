@@ -1,17 +1,24 @@
 package ch06.exam14;
 
 public class Calculator2 {
-		
-		final int field2; //fianl ÇÊµå°ªÀ» ÁÖÁö ¾Ê¾ÒÀ» °æ¿ì¿¡´Â °ªÀ» ÇÑ¹ø ÃÊ±âÈ­ÇÒ ¼öÀÖ´Ù. 
-		static final int FIELD4 ; //ÆÄÀÌ³Î ÇÊµå´Â ÇÑ¹ø µé¾î°¡¸é ¼öÁ¤ÇÒ ¼ö ¾ø´Ù.
-		
-		Calculator2(){
-			field2 = 5;
-		}
-		
-		static {
-			FIELD4 = 5;
-		}
-		
-		
+
+	//field
+	final int field2;  //ì¸ìŠ¤í„´íŠ¸í•„
+	static final int FIELD4;  //ì¸ìŠ¤í„´íŠ¸ í•„íŠ¸
+	
+	
+	//Constructor
+	Calculator2(){
+		field2=5;
+	}
+	
+	static{
+		FIELD4 =5;
+	}
+	
+	
+	
+	//Method
+	
 }
+

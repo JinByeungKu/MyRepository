@@ -7,13 +7,17 @@ public class KeyExample {
 		Key key1 = new Key(1);
 		Key key2 = new Key(1);
 		
-		System.out.println(key1 == key2);
+		System.out.println(key1==key2);
 		System.out.println(key1.equals(key2));
-		System.out.println(key1.hashCode() == key2.hashCode());
 		
-		HashMap<Key, String> hashMap = new HashMap<Key, String>();
-		hashMap.put(key1, "È«±æµ¿");
-		hashMap.put(key2, "°¨ÀÚ¹Ù");
-		System.out.println(hashMap.size()); //ÇØ½Ã¸Ê °ø°£¿¡ ¸î°³ÀÇ ÇØ½Ã°¡ ÀúÀåµÇ¾îÀÖ´ÂÁö °Ë»çÇÏ´Â ÄÚµå
+		System.out.println(key1.hashCode() ==key2.hashCode());
+	
+	HashMap<Key, String> hashMap = new HashMap<Key, String>();
+	hashMap.put(key1, "í™ê¸¸ë™");
+	hashMap.put(key2, "ê°ìë°”");
+	
+	System.out.println(hashMap.size());
+	System.out.println(key1);
+	System.out.println(key2);
 	}
 }

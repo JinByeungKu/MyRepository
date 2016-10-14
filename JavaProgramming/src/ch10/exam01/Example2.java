@@ -2,16 +2,19 @@ package ch10.exam01;
 
 public class Example2 {
 	public static void main(String[] args) {
-		try{
+
+		try {
 			String data1 = args[0];
 			String data2 = args[1];
-			
+
 			int value1 = Integer.parseInt(data1);
 			int value2 = Integer.parseInt(data2);
-		} catch(ArrayIndexOutOfBoundsException e){
-			System.out.println("ÀÔ·ÂµÈ ¼ö°¡ Æ²¸³´Ï´Ù.");
-		} catch(NumberFormatException e){
-			System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇÏÁö ¾Ê¾Ò½À´Ï´Ù.");
-		} 
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("ì—½ë ¥ì˜¤ë¥˜");
+		} catch (NumberFormatException e) {
+			System.out.println("ìˆ«ìì…ë ¥ì˜¤ë¥˜");
+		}
+
 	}
+
 }

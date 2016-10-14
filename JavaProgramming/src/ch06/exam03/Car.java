@@ -1,17 +1,19 @@
 package ch06.exam03;
 
 public class Car {
-	//Field
-	String company = "Çö´ëÀÚµ¿Â÷";
-	
-	
-	//Constructor
-	Car(){
-		System.out.println("Car() ½ÇÇàµÊ");
+
+	// Field
+	String Company = "í˜„ëŒ€ìë™ì°¨";
+
+	// constructor
+	Car() {
+		System.out.println("car() ì‹¤í–‰ë¨");
+//		Integer.parseInt("a");
 	}
-	
-	//Method
-	void run(){
-		System.out.println("run() ½ÇÇàµÊ");
+
+	// Method
+	void run() {
+		System.out.println("runì´ ì‹¤í–‰ë¨.");
 	}
+
 }

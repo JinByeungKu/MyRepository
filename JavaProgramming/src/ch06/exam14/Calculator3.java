@@ -1,15 +1,26 @@
 package ch06.exam14;
 
 public class Calculator3 {
+
+	//field
+	final int field2;  //ì¸ìŠ¤í„´íŠ¸í•„
+
+	
+	//Constructor
+	Calculator3(int field2){
+		this.field2=field2;
+	}	
+	
+	//Method
+	
+	
+	//Main Method
+	public static void main(String[] args)
+	{
+//		Calculator3 ca1 = Calculator3(5);
+//		Calculator3 ca2 = Calculator3(7);
 		
-		final int field2; //fianl ÇÊµå°ªÀ» ÁÖÁö ¾Ê¾ÒÀ» °æ¿ì¿¡´Â °ªÀ» ÇÑ¹ø ÃÊ±âÈ­ÇÒ ¼öÀÖ´Ù. 
-		
-		Calculator3(int field2){
-			this.field2 = field2;
-		}
-		
-		public static void main(String[] args) {
-			Calculator3 ca1 = new Calculator3(5); //ÁÖ¹Î¹øÈ£,id¿Í °°Àº ÇüÅÂµéÀ» ÇÑ¹ø °ªÀ» ÁÖ°í º¯°æÇÒ¼ö ¾øµµ·Ï ÇÒ ¼ö ÀÖ´Ù.
-			Calculator3 ca2 = new Calculator3(7);
-		}
+	}
+
 }
+

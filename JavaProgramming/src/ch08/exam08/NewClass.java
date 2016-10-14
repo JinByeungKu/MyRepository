@@ -4,14 +4,12 @@ public class NewClass implements OracleInterface{
 
 	@Override
 	public void method1() {
-		
-	}
-	
-	
-	@Override
-	public void method2() {
-		// TODO Auto-generated method stub
-		OracleInterface.super.method2();
+
 	}
 
+	@Override
+	public void method2() {
+
+	}
+	
 }

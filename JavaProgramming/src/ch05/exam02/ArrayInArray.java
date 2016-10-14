@@ -5,34 +5,26 @@ public class ArrayInArray {
 	public static void main(String[] args) {
 		int[][] scores = new int[2][3];
 		
+		System.out.println("Î∞∞Ïó¥Ïùò Í∏∏Ïù¥");
 		System.out.println(scores.length);
 		System.out.println(scores[0].length);
 		System.out.println(scores[1].length);
 		
-		
-		System.out.println(scores[0][0]);
-		System.out.println(scores[0][1]);
-		System.out.println(scores[0][2]);
-		
-		System.out.println(scores[1][0]);
-		System.out.println(scores[1][1]);
-		System.out.println(scores[1][2]);
-		
-		
-		
-		
-		for(int i=0;i<scores.length;i++){
-			for(int j=0;j<scores[i].length;j++){
-				System.out.println(scores[i][j]);
-				
+		System.out.println("-------------------------------");
+		for(int i1=0;i1<scores.length; i1++){
+			for(int i2=0; i2<scores.length; i2++){
+				System.out.println("["+i1+"]"+" ["+i2+"]");
 			}
 		}
 		
-		System.out.println("∞™ ∫Ø∞Ê");
-		
+		System.out.println("-------------------------------");
 		scores[0][1] = 50;
-		System.out.println(scores[0][1]);
-
+		 System.out.println(scores[0][1]);
+		
+		
+		
+		
 	}
 
 }
+

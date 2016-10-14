@@ -3,34 +3,28 @@ package ch09.exam09;
 public class ButtonExample {
 	public static void main(String[] args) {
 		Button btnOk = new Button();
-		btnOk.setOnClickListner(new OkListner());
+		btnOk.setOnClickListener(new OkListener());
 		
 		Button btnCancel = new Button();
-		btnCancel.setOnClickListner(new CancelListener());
+		btnCancel.setOnClickListener(new CancelListener());
 		
 		btnOk.click();
 		btnCancel.click();
 	}
-	
-
 }
+	class OkListener implements Button.OnClickListener{
 
-
-class OkListner implements Button.OnClickListner{
-
-	@Override
-	public void onClick() {
-		System.out.println("OK πˆ∆∞¿ª ≈¨∏Ø«ﬂΩ¿¥œ¥Ÿ.");
-		
+		@Override
+		public void onClick() {
+			System.out.println("OKÌÅ¥Î¶≠Ïù¥Ïóº");
+		}		
 	}
 	
-}
+	class CancelListener implements Button.OnClickListener{
 
-class CancelListener implements Button.OnClickListner{
+		@Override
+		public void onClick() {
+			System.out.println("CancelÌÅ¥Î¶≠Ïù¥Ïóº.");
+		}
 
-	@Override
-	public void onClick() {
-		System.out.println("Cancleπˆ∆∞¿ª ≈¨∏Ø«ﬂΩ¿¥œ¥Ÿ.");
-		
-	}
 }

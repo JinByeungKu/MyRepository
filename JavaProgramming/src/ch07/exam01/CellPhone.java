@@ -4,29 +4,11 @@ public class CellPhone {
 	String model;
 	String color;
 	
-	void powerOn() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	void bell() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	void sendVoice(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	void receiveVoice(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	void hangUp() {
-		// TODO Auto-generated method stub
-		
-	}
+	void powerOn(){System.out.println("PowerOn");}
+	void powerOff(){System.out.println("PowerOff");}
+	void bell(){System.out.println("ring..................ring.................");}
+	void sendVoice(String message){System.out.println("Me : "+message);}
+	void receiveVoice(String message){System.out.println("You: "+message);}
+	void hangUp(){System.out.println("down");}
 	
 }

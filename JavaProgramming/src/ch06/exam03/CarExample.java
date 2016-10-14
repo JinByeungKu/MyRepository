@@ -2,27 +2,28 @@ package ch06.exam03;
 
 public class CarExample {
 	public static void main(String[] args) {
-		//Car º¯¼ö ¼±¾ğ
+		// Carë³€ìˆ˜ ì„ ì–¸
 		Car myCar = null;
-		//Car °´Ã¼¸¦ »ı¼ºÇÏ°í À§Ä¡ Á¤º¸ ¾ò±â
-		try{
-			myCar = new Car();
-		} catch (Exception e){}
-		//°´Ã¼ ÀÖ´ÂÁö Á¶»ç
-		if(myCar != null){
-			System.out.println("Car °´Ã¼ Á¸Àç");
-		}else{
-			System.out.println("Car °´Ã¼ ¾øÀ½");
+		// Car ê°ì²´ ìƒì„±í•˜ê³  ìœ„ì¹˜ì •ë³´ ì–»ê¸°
+		try {
+			myCar = new Car(); // ê°ì²´ê°€ ìˆë‹¤ë©´ ìƒì„± ë²ˆì§€ì˜ ì£¼ì†Œê°€ myCarì— ì €ì¥ëœë‹¤.
+		} catch (Exception e) {
 		}
-		
-		//°´Ã¼³»ºÎÀÇ ÇÊµå°ªÀ» ÀĞ¾îº¸ÀÚ
-		System.out.println(myCar.company);
-		//°´Ã¼ ³»ºÎÀÇ ÇÊµå°ªÀ» º¯°æ
-		myCar.company = "KOSA";
-		System.out.println(myCar.company);
-			
-		//°´Ã¼ ³»ºÎÀÇ ¸Ş¼Òµå¸¦ È£ÃâÇØ º¸ÀÚ
+		// Car ê°ì²´ê°€ ìˆëŠ”ì§€ ì¡°ì‚¬
+		if (myCar != null) {
+			System.out.println("Carê°ì²´ ìˆìŒ");
+		} else {
+			System.out.println("Carê°ì²´ ì—†ìŒ");
+		}
+		System.out.println("----------------------------------------------");
+		// ê°ì²´ ë‚´ë¶€ì˜ í•„ë“œê°’ì„ ì½ì–´ëŠ”ë‹¤
+		System.out.println(myCar.Company);
+		// ê°ì²´ ë‚´ë¶€ì˜ í•„ë“œê°’ì„ ë³€ê²½.
+		myCar.Company = "KOSA..";
+		System.out.println(myCar.Company);
+		// ê°ì²´ ë‚´ë¶€ì˜ ë©”ì†Œë“œë¥¼ í˜¸ì¶œí•œë‹¤.
 		myCar.run();
-		
+
 	}
+
 }

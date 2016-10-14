@@ -1,21 +1,25 @@
 package ch06.exam09;
 
 public class CarExample {
+
 	public static void main(String[] args) {
-		Car myCar = new Car();
+		Car myCar=new Car();
 		
 		myCar.setGas(5);
-		
+
 		boolean gasState = myCar.isLeftGas();
-		if(gasState){
-			System.out.println("Ãâ¹ßÇÕ´Ï´Ù.");
+		if(gasState==true){
+			System.out.println("ë‹¬ë¦°ë‹¤!!!!!!");
 			myCar.run();
 		}
 		
 		if(myCar.isLeftGas()){
-			System.out.println("gas¸¦ ÁÖÀÔÇÒ ÇÊ¿ä°¡ ¾ø½À´Ï´Ù.");
+			System.out.println("gasë¥¼ ì£¼ì…í•  í•„ìš” ì—†ë‹¤");
 		}else{
-			System.out.println("gas¸¦ ÁÖÀÔÇØÁÖ¼¼¿ä.");
+			System.out.println("gasì£¼ì…í•´ë¼");
 		}
+
+
 	}
+
 }

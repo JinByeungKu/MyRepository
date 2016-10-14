@@ -25,208 +25,225 @@ public class ServerExample extends Application {
 	ExecutorService executorService;
 	ServerSocket serverSocket;
 	List<Client> connections = new Vector<>();
-	
-	void startServer() {
-		//스레드풀 생성(최대 스레드 50개만 사용)
-		executorService = Executors.newFixedThreadPool(50);
-		
-		//ServerSocket 생성(5001번 포트를 사용)
-		try{
-			serverSocket = new ServerSocket();
-			serverSocket.bind(new InetSocketAddress("192.168.0.25", 5001));
-		} catch(Exception e){
-			if(!serverSocket.isClosed()){ stopServer();}
-				return;
-			
-		}
-		//클라이언트 연결 수락 작업 생성과 작업큐에 넣기
-		Runnable runnable = new Runnable(){
 
+	// 스레드풀 생성(최대 스레드 50개만 사용)
+	void startServer() {
+		executorService = Executors.newFixedThreadPool(50);
+
+		// ServerSocket 생성
+		try {
+			serverSocket = new ServerSocket();
+			serverSocket.bind(new InetSocketAddress("192.168.0.31", 5001));
+		} catch (Exception e) {
+			if (!serverSocket.isClosed()) {
+				stopServer();
+			}
+			return;
+		}
+
+		// 클라이언트 연결 수락 작업 생성과 작업규에 넣기
+		Runnable runnable = new Runnable() {
 			@Override
 			public void run() {
-				Platform.runLater(new Runnable(){
-					public void run(){
-						displayText("[서버시작]");
-						btnStartStop.setText("stop");   //버튼의 글자를 stop으로 바꾸겟다
+				Platform.runLater(new Runnable() {
+					public void run() {
+						displayText("[서버 시작]");
+						btnStartStop.setText("stop");
 					}
 				});
-				
-				while(true){
-					try{
-						//클라이언트의 연결을 기다리고 수락하기
+
+				while (true) {
+					try {
+						// 클라이언트의 연결을 기다리고 수락하기
 						Socket socket = serverSocket.accept();
-						String message = "[연결 수락: " +socket.getInetAddress().getHostAddress()+":"+Thread.currentThread().getName()+"]";
-						Platform.runLater(new Runnable(){
-							public void run(){
+						String message = "[연결  수락: " + socket.getInetAddress().getHostAddress() + ": "
+								+ Thread.currentThread().getName() + "]";
+						Platform.runLater(new Runnable() {
+							@Override
+							public void run() {
 								displayText(message);
 							}
 						});
-						//통신개체 Client 생성
+
+						// 통신 객체 client 생성
 						Client client = new Client(socket);
-						
-						//클라이언트 관리
+
+						// client 관리
 						connections.add(client);
-						Platform.runLater(new Runnable(){
-							public void run(){
-								displayText("[연결 개수: " + connections.size()+"]");
+						Platform.runLater(new Runnable() {
+							@Override
+							public void run() {
+								displayText("[연결개수:" + connections.size() + "]");
 							}
 						});
-					} catch(Exception e){
-						if(!serverSocket.isClosed()){
+
+					} catch (Exception e) {
+						if (!serverSocket.isClosed()) {
 							stopServer();
 							break;
 						}
 					}
 				}
-				
 			}
 		};
 		executorService.submit(runnable);
-		/*Platform.runLater(new Runnable(){
-			@Override
-			public void run() {
-				displayText("서버 실행됨");
-			}
-		});*/
 	}
-	
+
 	void stopServer() {
 		try {
-			Iterator<Client> iterator = connections.iterator();
-			while(iterator.hasNext()){
+			Iterator<Client> iterator = connections.iterator();// 반복해서 지울때는
+																// iterator을
+																// 이용해서 지워야한다.
+			while (iterator.hasNext()) {
 				Client client = iterator.next();
-				client.socket.close();
-				iterator.remove();
+				client.socket.close(); // List안에 클라이언트 닫기
+				iterator.remove(); // List 안에 client 삭제(connections에서 삭제된다)
 			}
-			if(serverSocket != null && !serverSocket.isClosed()){
+
+			if (serverSocket != null && !serverSocket.isClosed()) {
 				serverSocket.close();
-			} 
-			if(executorService != null && !executorService.isShutdown()){
-				executorService.isShutdown();
 			}
-			Platform.runLater(new Runnable(){
-				public void run(){
+			if (executorService != null && !executorService.isShutdown()) {
+				executorService.shutdown();
+			}
+			Platform.runLater(new Runnable() {
+				public void run() {
 					displayText("[서버 멈춤]");
-					btnStartStop.setText("start");   //버튼의 글자를 stop으로 바꾸겟다
+					btnStartStop.setText("Start");
 				}
 			});
-			} catch (IOException e) {
+
+		} catch (Exception e) {
 		}
-	}	
-	
+	}
+
 	class Client {
-		Socket socket;
-		
-		public Client(Socket socket) {
+		Socket socket; // 필드
+
+		Client(Socket socket) { // 생성자
 			this.socket = socket;
-				receive();
-			}
-	
-	
-	
-		void receive(){
-			//클라이언트의 데이터를 받는 작업 생성  및 작업큐에 넣기
-			Runnable runnable = new Runnable(){
+			receive();
+
+		}
+
+		void receive() {
+			// 클라이언트의 데이터를 받는 작업 생성 및 작업큐에 넣기
+			Runnable runnable = new Runnable() {
 				@Override
 				public void run() {
-					try{
-						while(true){  //클라이언트의 데이터를 계속 받아야 하기 때문에 
-							InputStream is = socket.getInputStream();
+					try {
+						while (true) {
+							InputStream is = socket.getInputStream(); // 클라이언트에서
+																		// 보낸
+																		// 데이터
+																		// 읽기
 							byte[] values = new byte[1024];
 							int byteNum = is.read(values);
-							if(byteNum == -1){
+							if (byteNum == -1) {
 								throw new IOException();
-							}
-							String data = new String(values, 0, byteNum,"UTF-8");
-							for(Client client : connections){
+							} // 예외발생
+							String data = new String(values, 0, byteNum, "UTF-8");
+							for (Client client : connections) {// 클라이언트로부터 읽은 데이터 모든 클라이언트한테 보내기
 								client.send(data);
 							}
+
 						}
-					} catch(Exception e){
-						try{
-						connections.remove(Client.this);
-						String message = "[클라이언트 통신 안됨: " +socket.getInetAddress().getHostAddress()+":"+Thread.currentThread().getName()+"]";
-						Platform.runLater(new Runnable(){
-							public void run(){
-								displayText(message);
-							}
-						});
-						socket.close();
-						} catch(IOException e1){}
+					} catch (Exception e) {
+						try {
+							connections.remove(Client.this); // 중첩되어있는 클래스에서 각각
+																// 객체를 가르킬때는
+																// 클래스명.this
+							// 정상,비정상 종료일때 종료된클라이언트 출력
+							String message = "[클라이언트 통신 안됨: " + socket.getInetAddress().getHostAddress() + ": "
+									+ Thread.currentThread().getName() + "]";
+							Platform.runLater(new Runnable() {
+								@Override
+								public void run() {
+									displayText(message);
+								}
+							});
+							socket.close();
+						} catch (IOException e1) {
+						}
 					}
 				}
 			};
-			executorService.submit(runnable); //작업큐에 넣기
+			executorService.submit(runnable);
 		}
-	
-	void send(String data){
-	 //클라이언트로 데이터를 보내느 작업생성 ㅁ치 작업큐애	
-		Runnable runnable = new Runnable(){
 
-			@Override
-			public void run() {
-				try{
-					OutputStream os = socket.getOutputStream();
-					byte[] values = data.getBytes("UTF-8");
-					os.write(values);
-					os.flush();
-				} catch(Exception e){
-					try{
-						connections.remove(Client.this);
-						String message = "[클라이언트 통신 안됨: " +socket.getInetAddress().getHostAddress()+":"+Thread.currentThread().getName()+"]";
-						Platform.runLater(new Runnable(){
-							public void run(){
-								displayText(message);
-							}
-						});
-						socket.close();
-					} catch(IOException e1){}
+		void send(String data) {
+			// 클라이언트의 데이터를 보내는 작업 생성 및 작업큐에 넣기
+			Runnable runnable = new Runnable() {// 생성
+				@Override
+				public void run() {
+					try {
+						OutputStream os = socket.getOutputStream();
+						byte[] values = data.getBytes("UTF-8");
+						os.write(values); // 클라이언트가 없을때 예외가 발생한다.
+						os.flush();
+					} catch (Exception e) {
+						try {
+							connections.remove(Client.this); // 중첩되어있는 클래스에서 각각
+																// 객체를 가르킬때는
+																// 클래스명.this
+							// 정상,비정상 종료일때 종료된클라이언트 출력
+							String message = "[클라이언트 통신 안됨: " + socket.getInetAddress().getHostAddress() + ": "
+									+ Thread.currentThread().getName() + "]";
+							Platform.runLater(new Runnable() {
+								@Override
+								public void run() {
+									displayText(message);
+								}
+							});
+							socket.close();
+						} catch (IOException e1) {
+						}
+					}
+
 				}
-			}
-			
-		};
-		executorService.submit(runnable);
-	}	
-}
-	
+			};
+			executorService.submit(runnable);// 작업큐에 넣기
+		}
+	}
+
 	//////////////////////////////////////////////////////
 	TextArea txtDisplay;
 	Button btnStartStop;
-	
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		BorderPane root = new BorderPane();
 		root.setPrefSize(500, 300);
-		
+
 		txtDisplay = new TextArea();
 		txtDisplay.setEditable(false);
-		BorderPane.setMargin(txtDisplay, new Insets(0,0,2,0));
+		BorderPane.setMargin(txtDisplay, new Insets(0, 0, 2, 0));
 		root.setCenter(txtDisplay);
-		
+
 		btnStartStop = new Button("start");
 		btnStartStop.setPrefHeight(30);
 		btnStartStop.setMaxWidth(Double.MAX_VALUE);
-		btnStartStop.setOnAction(e->{
-			if(btnStartStop.getText().equals("start")) {
+		btnStartStop.setOnAction(e -> {
+			if (btnStartStop.getText().equals("start")) {
 				startServer();
-			} else if(btnStartStop.getText().equals("stop")){
+			} else if (btnStartStop.getText().equals("stop")) {
 				stopServer();
 			}
 		});
 		root.setBottom(btnStartStop);
-		
+
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("app.css").toString());
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Server");
-		primaryStage.setOnCloseRequest(event->stopServer());
+		primaryStage.setOnCloseRequest(event -> stopServer());
 		primaryStage.show();
 	}
-	
+
 	void displayText(String text) {
 		txtDisplay.appendText(text + "\n");
-	}	
-	
+	}
+
 	public static void main(String[] args) {
 		launch(args);
 	}

@@ -1,34 +1,31 @@
 package ch13.exam06;
 
-public class Pair<K,V> {
-	private K key;
-	private V value;
+public class Pair<K,V>{
+	
+	private K Key;
+	private V Value;
 	
 	public Pair(K key, V value) {
-		this.key = key;
-		this.value = value;
+		super();
+		this.Key = key;
+		this.Value = value;
 	}
 
 	public K getKey() {
-		return key;
+		return Key;
 	}
 
 	public void setKey(K key) {
-		this.key = key;
+		Key = key;
 	}
 
 	public V getValue() {
-		return value;
+		return Value;
 	}
 
 	public void setValue(V value) {
-		this.value = value;
+		Value = value;
 	}
 	
-	@Override
-	public String toString() {
-		return this.value.toString();
-	}
-	
-	
+
 }

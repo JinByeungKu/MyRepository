@@ -5,55 +5,93 @@ import java.util.Scanner;
 public class ScoreManagement {
 
 	public static void main(String[] args) throws Exception {
+
 		Scanner scanner = new Scanner(System.in);
-
-		System.out.print("ÇĞ»ı¼ö: ");
-		String strNum = scanner.nextLine();
-		int num = Integer.parseInt(strNum);
-		String[][] scores = new String[num][2];
-
-		for (int i = 0; i < scores.length; i++) {
-			System.out.print("ÀÌ¸§: ");
-			String name = scanner.nextLine();
-			System.out.print("Á¡¼ö: ");
-			String score = scanner.nextLine();
-			String[] arr = { name, score };
-			scores[i] = arr;
-		}
+		String[][] students = null; // ì´í•™ìƒìˆ˜ë°°ì—´]
 
 		while (true) {
-			System.out.println("---------------------------");
-			System.out.println("1.ÃÑ ÇĞ»ı¼ö | 2.ÀÔ·Â | 3.ÃÖ°íÁ¡¼ö | 4.Æò±ÕÁ¡¼ö | 5.Á¾·á");
-			System.out.println("---------------------------");
-			System.out.print("¼±ÅÃ> ");
-			String choiceNum = scanner.nextLine();
-
-			if (choiceNum.equals("1")) {
-				
-			}else if (choiceNum.equals("2")) {
-				
-			} else if (choiceNum.equals("3")) {
-				int max = 0;
-				for (String[] arr : scores) { // ÃÖ°íÁ¡¼ö Ã£±â
-					if (max < Integer.parseInt(arr[1])) {
-						max = Integer.parseInt(arr[1]);
+			System.out.println("---------------------------------------------------------------------------------");
+			if (students == null) {
+				System.out.println("| 1.ì´í•™ìƒìˆ˜ || 7. ì¢…ë£Œ |");
+			} else {
+				System.out.println("| 1.ì´í•™ìƒìˆ˜ || 2.ëª©ë¡ || 3.ì…ë ¥ || 4.ì‚­ì œ || 5.ìµœê³  ì ìˆ˜ || 6. í‰ê·  || 7. ì¢…ë£Œ |");
+			}
+			System.out.println("---------------------------------------------------------------------------------");
+			System.out.print(">ì„ íƒ: ");
+			String choice = scanner.nextLine();
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			if (choice.equals("1")) {
+				System.out.println();
+				System.out.print(">ì´í•™ìƒìˆ˜: ");
+				int totalNum = Integer.parseInt(scanner.nextLine());
+				students = new String[totalNum][]; // í•™ìƒìˆ˜ë§Œí¼ ë°°ì—´ì„ ë§Œë“ ë‹¤. [2]ì˜ë¯¸ëŠ” ì´ë¦„ê³¼
+													// ì ìˆ˜ì…ë ¥.
+				//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			} else if (choice.equals("2")) {
+				System.out.println();
+				System.out.println("************************************");
+				System.out.println("í•™ë²ˆ\t\tì´ë¦„\t\tì ìˆ˜");
+				System.out.println("************************************");
+				for (int i = 0; i < students.length; i++) {
+					String[] student = students[i];
+					if (student != null) {
+						System.out.println(student[0] + "\t\t" + student[1] + "\t\t" + student[2]);
 					}
 				}
-
-				for (String[] arr : scores) { // ±¸ÇÑ ÃÖ°íÁ¡¼öÀÇ ÀÌ¸§Ã£±â
-					if (max == Integer.parseInt(arr[1])) {
-						System.out.println(arr[0] + ", " + arr[1]);
+				////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			} else if (choice.equals("3")) {
+				System.out.println();
+				System.out.println(">ì´ë¦„: ");
+				String name = scanner.nextLine();
+				System.out.println(">ì ìˆ˜: ");
+				String score = scanner.nextLine();
+				for (int i = 0; i < students.length; i++) {
+					if (students[i] == null) {
+						String[] student = { String.valueOf(i), name, score };
+						students[i] = student;
+						break;
 					}
 				}
-			} else if (choiceNum.equals("4")) {
-				int sum = 0;
-				for (String[] arr : scores) {
-					sum += Integer.parseInt(arr[1]);
+				////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			} else if (choice.equals("4")) {
+				System.out.println();
+				System.out.println(">ëª‡ë²ˆ í•™ìƒì„ ì‚­ì œí•  ê±´ê°€ìš”?");
+				int sno = Integer.parseInt(scanner.nextLine());
+				students[sno] = null;
+				////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			} else if (choice.equals("5")) {
+				int max=0;
+				for (String[] student : students) {
+					int score = Integer.parseInt(student[1]);
+					if (student != null && max < score) {
+						max = score;
+					}
 				}
-				int avg = sum / scores.length;
+				System.out.println("************************************");
+				System.out.println("í•™ë²ˆ\t\tì´ë¦„\t\tì ìˆ˜");
+				System.out.println("************************************");
+				for (String[] student : students) {
+					if (student != null) {
+						int score = Integer.parseInt(student[2]);
+						if (max == score) {
+							System.out.println("ë²ˆí˜¸: " + student[0] + "\t\tì´ë¦„: " + student[1] + "\t\tì ìˆ˜: " + student[2]);
+						}
+					}
 
-				System.out.println("Æò±ÕÁ¡¼ö: " + avg);
-			} else if (choiceNum.equals("5")) {
+				}
+				////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			} else if (choice.equals("6")) {
+				int count = 0, sum = 0;
+				for (String[] student : students) {
+					if (student != null) {
+						count++;
+						sum += Integer.parseInt(student[2]);
+					}
+				}
+				System.out.println("í‰ì  :"+ (double)sum/count);
+
+			} else if (choice.equals("7")) {
+				System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 				break;
 			}
 		}

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/exam09")
 public class Exam09Controller {
 	private static final Logger logger = LoggerFactory.getLogger(Exam09Controller.class);
-
+	
 	private A a;
 	public void setA(A a) {
 		logger.info("setA() 실행");
@@ -24,26 +24,20 @@ public class Exam09Controller {
 	
 	private ServiceA serviceA;
 	public void setServiceA(ServiceA serviceA) {
-		logger.info("ServiceA() 실행");
+		logger.info("setServiceA() 실행");
 		this.serviceA = serviceA;
 	}
 	
 	private ServiceB serviceB;
 	public void setServiceB(ServiceB serviceB) {
-		logger.info("ServiceB() 실행");
+		logger.info("setServiceB() 실행");
 		this.serviceB = serviceB;
 	}
 	
 	private ServiceC serviceC;
 	public void setServiceC(ServiceC serviceC) {
-		logger.info("ServiceC() 실행");
+		logger.info("setServiceC() 실행");
 		this.serviceC = serviceC;
-	}
-	
-	private ServiceD serviceD;
-	public void setServiceD(ServiceD serviceD) {
-		logger.info("ServiceD() 실행");
-		this.serviceD = serviceD;
 	}
 	
 	private C c;
@@ -63,15 +57,15 @@ public class Exam09Controller {
 		logger.info("setF() 실행");
 		this.f = f;
 	}
-	
+
 	public Exam09Controller() {
 		logger.info("Exam09Controller 객체 생성");
 	}
 	
 	@RequestMapping("/index")
-		public String index() {
-			logger.info("index 처리");
-			return "exam09/index";
+	public String index() {
+		logger.info("index 처리");
+		return "exam09/index";
 	}
 	
 	@RequestMapping("/method1")
@@ -82,7 +76,6 @@ public class Exam09Controller {
 		serviceA.method();
 		serviceB.method();
 		serviceC.method();
-		serviceD.method();
 		return "redirect:/exam09/index";
 	}
 	

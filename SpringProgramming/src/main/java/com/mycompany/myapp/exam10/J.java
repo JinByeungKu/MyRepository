@@ -16,12 +16,10 @@ public class J {
 	public J(H h, G g) {
 		logger.info("J 객체 생성");
 		this.h = h;
-		this.g = g;
 	}
 	
 	public void method() {
 		logger.info("method 실행");
 		h.method();
-		g.method();
 	}
 }

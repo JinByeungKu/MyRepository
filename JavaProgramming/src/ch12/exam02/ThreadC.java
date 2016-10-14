@@ -1,15 +1,16 @@
 package ch12.exam02;
 
 public class ThreadC extends Thread{
-	
-	public ThreadC(int num) {
-		setName("ThreadC-" + num);
-	}
-	@Override
+public ThreadC(int num){
+	setName("threadC-"+num);
+}
+@Override
 	public void run() {
-		for(long i=1;i<=200100000;i++){
-			
-		}
-		System.out.println(getName() + " 종료");
+	for (int i = 0; i < 200000000; i++) {
+		String str = "a";
+		str+="b";
+		str +="c";
+	}
+	System.out.println(getName()+"종료");
 	}
 }

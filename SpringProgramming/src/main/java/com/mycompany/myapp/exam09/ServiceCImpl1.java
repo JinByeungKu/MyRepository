@@ -14,5 +14,4 @@ public class ServiceCImpl1 implements ServiceC {
 	public void method() {
 		logger.info("method 실행");
 	}
-
 }

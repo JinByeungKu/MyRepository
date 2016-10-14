@@ -5,19 +5,18 @@ import java.util.Scanner;
 public class Example1 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		
-		while(true){
-			try{
-				System.out.print("ÀÔ·Â: ");
+		while (true) {
+			try {
+				System.out.print("ìž…ë ¥:>");
 				String data = scanner.nextLine();
 				int value = Integer.parseInt(data);
 				System.out.println(value);
-			} catch(Exception e){
-				System.out.println("¼ýÀÚ°¡ ¾Æ´Ñ°Í °°½À´Ï´Ù");
+			} catch (Exception e) {
+				System.out.println("type miss");
 			} finally {
-				System.out.println("¹«Á¶°Ç ½ÇÇà");
+				System.out.println("RUnRUn");
 			}
+
 		}
 	}
-	
 }

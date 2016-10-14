@@ -6,8 +6,6 @@ public class GcExample {
 		emp = null;
 		emp = new Employee(2);
 		emp = new Employee(3);
-		System.gc(); //쓰레기 객체를 제거해라
+		System.gc();
 	}
-	
-	
 }

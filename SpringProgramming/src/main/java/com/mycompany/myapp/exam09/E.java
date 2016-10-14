@@ -7,9 +7,9 @@ public class E {
 	private static final Logger logger = LoggerFactory.getLogger(E.class);
 	
 	private B b;
-	private D d;
+	private D d; 
 	
-	private E(B b, D d) {
+	public E(B b, D d) {
 		logger.info("E 객체 생성");
 		this.b = b;
 		this.d = d;

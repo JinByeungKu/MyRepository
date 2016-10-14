@@ -12,25 +12,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/exam10")
 public class Exam10Controller {
 	private static final Logger logger = LoggerFactory.getLogger(Exam10Controller.class);
-
+	
 	private G g;
 	@Autowired
 	public void setG(G g) {
-		logger.info("setG() 실행");
+		logger.info("setG() 실행"); 
 		this.g = g;
 	}
 	
 	private H h;
 	@Autowired
 	public void setH(H h) {
-		logger.info("setH() 실행");
+		logger.info("setH() 실행"); 
 		this.h = h;
 	}
 	
 	private Service service;
 	//@Autowired --> Type으로 주입
 	//@Resource --> 등록이름으로 주입
-	@Resource(name="serviceImpl1")
+	@Resource(name="serviceImpl2")
 	public void setService(Service service) {
 		logger.info("setService() 실행");
 		this.service = service;
@@ -46,9 +46,9 @@ public class Exam10Controller {
 	private J j;
 	@Autowired
 	public void setJ(J j) {
-		logger.info("setI() 실행");
+		logger.info("setJ() 실행");
 		this.j = j;
-	}
+	}	
 	
 	@Autowired
 	private K k;

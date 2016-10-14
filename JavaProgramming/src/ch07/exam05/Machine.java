@@ -1,15 +1,15 @@
 package ch07.exam05;
 
 public class Machine {
-	public void work(){
-		System.out.println("Machine-work() ½ÇÇà");
+	public void work() {
+		System.out.println("Machine-work ì‹¤í–‰");
 	}
 	
-	public final void powerOn(){
-		System.out.println("Àü¿øÀ» ¿¬°áÇÕ´Ï´Ù.");
+	public final void powerOn() {
+		System.out.println("ì „ì› ON");
 	}
 	
-	public final void powerOff(){
-		System.out.println("Àü¿øÀ» ²÷½À´Ï´Ù.");
+	public final void powerOff() {
+		System.out.println("ì „ì› OFF");
 	}
 }

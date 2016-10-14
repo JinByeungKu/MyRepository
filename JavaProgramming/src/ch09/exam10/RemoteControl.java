@@ -1,5 +1,4 @@
 package ch09.exam10;
 
-public interface RemoteControl {
-
+public class RemoteControl {
 }

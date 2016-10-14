@@ -1,22 +1,27 @@
 package ch07.exam13;
 
 public class Example {
-	//public static void use(Phone phone){}
-	
+	public static void use(Phone phone) {
+
+	}
+
 	public static void main(String[] args) {
+		
 		SmartPhone p1 = new SmartPhone();
-		p1.number = "010-1234-1234";
+		p1.number = "010-9257-8987";
 		p1.ring();
 		p1.sendVoice();
 		p1.receiveVoice();
 		p1.internet();
 		
+		System.out.println();
+		System.out.println("---------------------------------------------------------------------------------");
 		
 		HomePhone p2 = new HomePhone();
-		p1.number = "02-234-2341";
-		p2.address = "¼­¿ï½Ã ¼ÛÆÄ±¸ °¡¶ôµ¿ ITº¥Ã³Å¸¿ö ¼­°ü 12Ãş";
+		p2.number = "010-9257-8987";
 		p2.ring();
 		p2.sendVoice();
 		p2.receiveVoice();
+		p2.address = "ì„œìš¸ì‹œ ì†¡íŒŒêµ¬ ê°€ë½ë™ IT ë²¤ì²˜ íƒ€ì›Œ ì„œê´€ 12ì¸µ";
 	}
 }

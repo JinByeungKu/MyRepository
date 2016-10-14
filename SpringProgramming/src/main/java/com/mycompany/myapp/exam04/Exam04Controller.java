@@ -28,21 +28,22 @@ public class Exam04Controller {
 	@RequestMapping(value="/join", method=RequestMethod.POST)
 	public String join(Member member) {
 		logger.info("join 요청 처리");
-		logger.info("mid:" + member.getMid());
-		logger.info("mname:" + member.getMname());
-		logger.info("mpassword:" + member.getMpassword());
-		logger.info("memail:" + member.getMemail());
-		logger.info("mtel:" + member.getMtel());
-		logger.info("mjob:" + member.getMjob());
-		logger.info("mskill:" + Arrays.toString(member.getMskill()));
-		logger.info("madrress1:" + member.getMaddress1());
-		logger.info("madrress2:" + member.getMaddress2());
-		logger.info("mbirth:" + member.getMbirth());
+		logger.info("mid: " + member.getMid());
+		logger.info("mname: " + member.getMname());
+		logger.info("mpassword: " + member.getMpassword());
+		logger.info("memail: " + member.getMemail());
+		logger.info("mtel: " + member.getMtel());
+		logger.info("mjob: " + member.getMjob());
+		logger.info("mskill: " + Arrays.toString(member.getMskill()));
+		logger.info("maddress1: " + member.getMaddress1());
+		logger.info("maddress2: " + member.getMaddress2());
+		logger.info("mbirth: " + member.getMbirth());
 		return "exam04/index";
 	}
 	
 	@RequestMapping(value="/write", method=RequestMethod.GET)
 	public String writeForm() {
+		logger.info("writeForm 요청 처리");
 		return "exam04/writeform";
 	}
 	
@@ -54,3 +55,9 @@ public class Exam04Controller {
 		return "exam04/index";
 	}
 }
+
+
+
+
+
+

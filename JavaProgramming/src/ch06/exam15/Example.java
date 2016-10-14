@@ -1,7 +1,7 @@
 package ch06.exam15;
 
-import ch06.exam15.pack1.*;
-import ch06.exam15.pack2.*;
+import ch06.exam15.pack1.A;
+import ch06.exam15.pack2.B;
 
 public class Example {
 

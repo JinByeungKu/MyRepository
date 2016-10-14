@@ -1,19 +1,20 @@
 package ch06.exam05;
 
 public class Person {
-	//Field
+
+	// 頃勲摐Field
 	String name;
 	String sex;
 	int age;
 	double height;
 	boolean married;
-	
-	
-	//Basic Constructor
-	//扁夯积己磊 磊悼 积己
-	/*Person(String name) {
+
+	// 靸濎劚鞛怌onstructor
+	//旮半掣 靸濎劚鞛愱皜 鞛愲彊 靸濎劚
+	/*	Person(String name) {
 		this.name = name;
 	}*/
-	
-	//Method
+
+	// 氅旍唽霌淢ethod
+
 }

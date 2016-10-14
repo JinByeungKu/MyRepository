@@ -14,18 +14,19 @@ import java.util.Scanner;
 
 public class ClientExample {
 	public static void main(String[] args) {
-		//소켓생성
+		// 소켓 생성
 		Socket socket = new Socket();
-		
+
+
 		try {
-			//연결요청하기
-			SocketAddress sa = new InetSocketAddress("192.168.0.26", 5001);
+			// 연결 요청
+			SocketAddress sa = new InetSocketAddress("192.168.0.31", 5001);
 			socket.connect(sa);
-			System.out.println("서버와 연결시킴");
+			System.out.println("[seuses connect!]");
 			
 			//보낼 데이터를 키보드로부터 읽기
 			Scanner scanner = new Scanner(System.in);
-			System.out.print("보낼 데이터: ");
+			System.out.print("send data>");
 			String data = scanner.nextLine();
 			
 			//서버로 데이터를 보내기
@@ -34,21 +35,22 @@ public class ClientExample {
 			ps.println(data);
 			ps.flush();
 			
-			//서버에서 보낸 데이터를 읽기
+			//서버에서 보낸 데이터 읽기
 			InputStream is = socket.getInputStream();
 			Reader reader = new InputStreamReader(is);
 			BufferedReader br = new BufferedReader(reader);
 			data = br.readLine();
 			System.out.println(data);
-			
+					
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
-		//서버의 연결을 끊음
+
+		// 서버의 연결을 끊음
 		try {
 			socket.close();
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
+
 	}
+
 }

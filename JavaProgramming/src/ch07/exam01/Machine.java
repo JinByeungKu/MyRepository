@@ -1,20 +1,22 @@
 package ch07.exam01;
 
 public class Machine {
+
+	// Field
 	public String kind;
 	public String maker;
 	
-	
-	public Machine() {
-		System.out.println("Machine() Ω««‡µ ");
+	// COnstrutor
+	public Machine(){
+		System.out.println("Machine() Ïã§ÌñâÎê®");
 	}
 	
-	
-	
-	public void powerOn(){
-		System.out.println(maker + " : " + kind + "±∏µø");
+	// Method
+	void turnOn() {
+		System.out.println(maker +"."+ kind+"On");
 	}
-	public void powerOff(){
-		System.out.println(maker + " : " + kind + "∏ÿ√„");
+
+	void turnOff() {
+		System.out.println(maker +"."+ kind+"Off");
 	}
 }

@@ -1,21 +1,24 @@
 package ch07.exam09;
 
-public class KumhoTire extends Tire{
+public class KumhoTire extends Tire {
+
+	// Field
+
+	// Constructor
 	public KumhoTire(String location, int maxRotation) {
 		super(location, maxRotation);
 	}
-	
+
+	// Method
 	@Override
 	public boolean roll() {
 		++accumulatedRotation;
-		if(accumulatedRotation < maxRotation){
-			System.out.println(location + "KumhoTire ¼ö¸í: " + (maxRotation-accumulatedRotation) + "È¸");
+		if (accumulatedRotation < maxRotation) {
+			System.out.println(location + "KumhoTire ìˆ˜ëª…: " + (maxRotation - accumulatedRotation) + "íšŒ");
 			return true;
-		} else{
-			System.out.println("***" + location + "KumhoTire ÆãÅ© ***");
+		} else {
+			System.out.println("***" + location + "KumhoTire íŽ‘í¬***");
 			return false;
 		}
 	}
-	
-	
 }

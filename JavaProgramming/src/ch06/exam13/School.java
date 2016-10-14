@@ -1,13 +1,18 @@
 package ch06.exam13;
 
 public class School {
-	private static School school = new School();
+
+	//Field
+	private static School singleton = new School();
 	
+	
+	//Constructor
 	private School(){
-		
 	}
 	
-	static School getInstance(){ //School.school = null;을 막기 위해 사용
-		return school;
+	
+	//Method
+	static School getInstance(){
+		return singleton;
 	}
 }

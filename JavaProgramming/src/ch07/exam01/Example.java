@@ -1,21 +1,24 @@
 package ch07.exam01;
 
 public class Example {
+
 	public static void main(String[] args) {
+		
 		Car car = new Car();
-		car.kind = "½Â¿ëÂ÷";
-		car.maker = "Çö´ëÀÚµ¿Â÷";
+		car.kind="ìŠ¹ìš©ì°¨";
+		car.maker="í˜„ëŒ€ì°¨";
+
+		Car car2= new Car();
+		car2.kind="íŠ¸ëŸ­";
+		car2.maker="ê¸°ì•„ì°¨";
 		
-		
-		Car car2 = new Car();
-		car2.kind = "Æ®·°";
-		car2.maker = "±â¾ÆÀÚµ¿Â÷";
 		/*
-		car.powerOn();
-		car.powerOff();
+		car.turnOn();
+		car.turnOff();	
 		
-		car2.powerOn();
-		car2.powerOff();*/
+		car2.turnOn();
+		car2.turnOff();*/
 		
 	}
+
 }

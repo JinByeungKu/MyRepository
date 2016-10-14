@@ -24,8 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/exam06")
 public class Exam06Controller {
 	private static final Logger logger = LoggerFactory.getLogger(Exam06Controller.class);
-	private HttpServletRequest user;
-
+	
 	@RequestMapping("/index")
 	public String index() {
 		logger.info("index 요청 처리");
@@ -42,9 +41,9 @@ public class Exam06Controller {
 		if(request.getHeader("User-Agent").contains("Chrome")) {
 			logger.info("브라우저 종류: 크롬");
 		} else if(request.getHeader("User-Agent").contains("Trident/7.0")) {
-			logger.info("브라우저 종류: 인터넷 익스 플로러 11");
+			logger.info("브라우저 종류: 인터넷 익스플로러 11");
 		} else if(request.getHeader("User-Agent").contains("MSIE")) {
-			logger.info("브라우저 종류: 인터넷 익스 플로러 10 이하");
+			logger.info("브라우저 종류: 인터넷 익스플로러 10 이하");
 		}
 		//요청 파라미터 값 얻기
 		logger.info("mid: " + request.getParameter("mid"));
@@ -54,30 +53,31 @@ public class Exam06Controller {
 		logger.info("요청 URI: " + request.getRequestURI());
 		logger.info("요청 URL: " + request.getRequestURL());
 		logger.info("요청 방식: " + request.getMethod());
-		logger.info("시스템 파일 경로: " + request.getRealPath("WEB-INF/image/photo1.jpg"));
-		logger.info("시스템 파일 경로: " + request.getServletContext().getRealPath("WEB-INF/image/photo1.jpg"));
-		return "exam06/index";
+		logger.info("시스템 파일 경로: " + request.getRealPath("/WEB-INF/image/photo1.jpg"));
+		logger.info("시스템 파일 경로: " + request.getServletContext().getRealPath("/WEB-INF/image/photo1.jpg"));
+		return "exam06/index"; 
 	}
 	
 	@RequestMapping("/method2")
 	public void method2(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		/*response.setContentType("application/json; charset=UTF-8");
+		/*response.setContentType("application/json; charset=UTF-8"); 
 		PrintWriter pw = response.getWriter();
-		pw.print("(mid:'fall', mname:'한가을')");
+		pw.println("{mid:'fall', mname:'한가을'}");
 		pw.flush();
 		pw.close();*/
 		
 		response.setContentType("image/jpeg");
+		
 		String fileName = "사진2.jpg";
 		fileName = URLEncoder.encode(fileName, "UTF-8");
 		response.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
 		
 		OutputStream os = response.getOutputStream();
-		String filePath =request.getServletContext().getRealPath("/WEB-INF/image/사진2.jpg");
+		String filePath = request.getServletContext().getRealPath("/WEB-INF/image/사진2.jpg");
 		InputStream is = new FileInputStream(filePath);
 		byte[] values = new byte[1024];
 		int byteNum = -1;
-		while((byteNum = is.read(values)) !=-1) {
+		while((byteNum = is.read(values)) != -1) {
 			os.write(values, 0, byteNum);
 		}
 		os.flush();
@@ -90,16 +90,16 @@ public class Exam06Controller {
 		if(userAgent.contains("Chrome")) {
 			logger.info("브라우저 종류: 크롬");
 		} else if(userAgent.contains("Trident/7.0")) {
-			logger.info("브라우저 종류: 인터넷 익스 플로러 11");
+			logger.info("브라우저 종류: 인터넷 익스플로러 11");
 		} else if(userAgent.contains("MSIE")) {
-			logger.info("브라우저 종류: 인터넷 익스 플로러 10 이하");
+			logger.info("브라우저 종류: 인터넷 익스플로러 10 이하");
 		}
 		return "exam06/index";
 	}
 	
 	@RequestMapping("/method4CreateCookie")
 	public String method4CreateCookie(HttpServletResponse response) throws UnsupportedEncodingException {
-		//쿠키 생성
+		//쿠기 생성
 		Cookie cookie1 = new Cookie("mid", "fall");
 		
 		String name = "홍길동";
@@ -107,9 +107,10 @@ public class Exam06Controller {
 		Cookie cookie2 = new Cookie("mname", name);
 		cookie2.setMaxAge(60);
 		
-		//쿠키 보내기(저장) - 응답 헤더에 쿠키 정보를 저장
+		//쿠기 보내기(저장) - 응답 헤더에 쿠키 정보를 저장
 		response.addCookie(cookie1);
 		response.addCookie(cookie2);
+		
 		return "exam06/index";
 	}
 	
@@ -134,7 +135,7 @@ public class Exam06Controller {
 	
 	@RequestMapping("/method4ReceiveCookieHow2")
 	public String method4ReceiveCookieHow2(
-			@CookieValue(defaultValue="") String mid,
+			@CookieValue(defaultValue="") String mid, 
 			@CookieValue(defaultValue="") String mname) {
 		System.out.println("mid:" + mid);
 		System.out.println("mname:" + mname);
@@ -168,20 +169,42 @@ public class Exam06Controller {
 	
 	@RequestMapping("/method5GetObject")
 	public String method5GetObject(HttpSession session) {
-		//HttpSession에 객체 얻기
+		//HttpSession에서 객체 얻기
 		Member member = (Member) session.getAttribute("member");
 		if(member != null) {
 			System.out.println("mid:" + member.getMid());
 			System.out.println("mname:" + member.getMname());
 		}
 		return "exam06/index";
-	 
 	}
+	
 	@RequestMapping("/method5RemoveObject")
 	public String method5RemoveObject(HttpSession session) {
-		//HttpSession에 객체 삭제
+		//HttpSession에서 객체 삭제
 		session.removeAttribute("member");
 		return "exam06/index";
 	}
-	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

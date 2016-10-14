@@ -2,10 +2,10 @@ package ch11.exam09;
 
 public class NewInstanceExample {
 	public static void main(String[] args) throws Exception {
-		Class clazz = Class.forName("ch11.examp09" + args[0]); //forNameÀ¸·Î Á¤º¸¸¦ °¡Áö°í ¿È. °´Ã¼´Â ¾È¸¸µé¾îÁü
-		Object obj = clazz.newInstance(); //forNameÀ¸·Î ¾òÀº Á¤º¸¸¦ ¹ÙÅÁÀ¸·Î °´Ã¼¸¦ ¸¸µë
-		Action action = (Action) obj;     //obj°¡ °´Ã¼ÂüÁ¶¸¦ ÇÔ. Action ÀÎÅÍÆäÀÌ½º·Î Å¸ÀÔº¯È¯ÇØ¼­ »ç¿ëÇÏ´Â °ÍÀÓ
+		Class clazz = Class.forName("ch11.exam09." + args[0]);
+		clazz.newInstance();
+		Object obj = clazz.newInstance();
+		Action action = (Action) obj; //argsê°ì²´ë¥¼ ì°¸ì¡°í•œë‹¤. argsë¡œ clazzë§Œë“¤ì—‡ë‹¤. 
 		action.execute();
-		
 	}
 }

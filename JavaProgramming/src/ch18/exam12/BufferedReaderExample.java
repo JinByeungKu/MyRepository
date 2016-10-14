@@ -1,27 +1,29 @@
 package ch18.exam12;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class BufferedReaderExample {
 	public static void main(String[] args) throws IOException {
+
 		long start = 0;
 		long end = 0;
-		//버퍼를 안쓰는 경우
-		FileReader fr1 = new FileReader("src/ch18/exam12/NAVER.html");
-		start = System.currentTimeMillis();
-		while(fr1.read() != -1){}
-		end = System.currentTimeMillis();
+
+		FileInputStream fr = new FileInputStream("src/ch18/exam12/NAVER.html");
+		start = System.nanoTime();
+		while (fr.read() != -1) {}
+		end=System.nanoTime();
+		System.out.println(end-start);
+	
+		
+		FileInputStream fr2 = new FileInputStream("src/ch18/exam12/NAVER.html");
+		BufferedInputStream br = new BufferedInputStream(fr2);
+		start = System.nanoTime();
+		while (br.read() != -1) {}
+		end=System.nanoTime();
 		System.out.println(end-start);
 		
 		
-		//버퍼를 사용하는경우
-		FileReader fr2 = new FileReader("src/ch18/exam12/NAVER.html");
-		BufferedReader br = new BufferedReader(fr2);
-		start = System.currentTimeMillis();
-		while(br.read() != -1){}
-		end = System.currentTimeMillis();
-		System.out.println(end-start);
 	}
 }

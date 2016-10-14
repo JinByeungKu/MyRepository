@@ -1,13 +1,15 @@
 package ch11.exam08;
 
 public class ClassExample {
-	public static void main(String[] args) throws ClassNotFoundException{
-		//Class classCar = Car.class; //¸Ş¼Òµå¿µ¿ª¿¡ carÄÚµå°¡ ÀúÀåµÈ ¸Ş¸ğ¸® ¹øÁö¸¦ °¡Áö°í ÀÖÀ½
-		//Class classCar = Class.forName("ch11.exam07.Car");
+	public static void main(String[] args) throws ClassNotFoundException {
+		// Class classCar = Car.class;  //ì´ë¯¸ ë¡œë”©ì´ ë˜ì–´ìˆëŠ” í´ë˜ìŠ¤ë¥¼ ê°€ì ¸ì™€ë¼
+//		Class classCar = Class.forName("ch11.exam08.Car");  //ë¡œë”©ëœê±°ë‘ ìƒê´€ì—†ë‹¤
+	
 		Car car = new Car();
 		Class classCar = car.getClass();
 		System.out.println(classCar.getName());
 		System.out.println(classCar.getSimpleName());
 		System.out.println(classCar.getPackage().getName());
+
 	}
 }

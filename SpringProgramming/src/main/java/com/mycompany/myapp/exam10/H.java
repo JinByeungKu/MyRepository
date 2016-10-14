@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class H {
 	private static final Logger logger = LoggerFactory.getLogger(H.class);
-
+	
 	public H() {
 		logger.info("H 객체 생성");
 	}

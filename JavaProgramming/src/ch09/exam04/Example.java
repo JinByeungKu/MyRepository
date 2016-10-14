@@ -6,6 +6,5 @@ public class Example {
 		A.B b = a.new B();
 		
 		
-		
 	}
 }

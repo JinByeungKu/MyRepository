@@ -1,4 +1,4 @@
-<%@ page contentType = "text/html;charset=UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -6,6 +6,6 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
-		withdraw 홈페이지 입니다.
+		withdraw 페이지입니다.
 	</body>
 </html>

@@ -3,11 +3,16 @@ package ch06.exam15.pack2;
 import ch06.exam15.pack1.A;
 
 public class B {
-	A a1 = new A();
+
+	//Field
+	A a= new A();
 	
-	
+	//Constructor
+	public B(){
+		A a= new A();
+	}
 	
 	void method(){
-		A a3 = new A();
+		A a = new A();
 	}
 }

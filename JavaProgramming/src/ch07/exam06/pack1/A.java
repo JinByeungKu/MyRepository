@@ -1,12 +1,15 @@
 package ch07.exam06.pack1;
 
 public class A {
+
+	//Field
 	protected int field;
+
+	//Constructor
+	protected A(){}
 	
-	protected A(){
-		
-	}
-	protected void method(){
-		
-	}
+	
+	//Method
+	protected void method(){}
+	
 }

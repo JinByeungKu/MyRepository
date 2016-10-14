@@ -4,7 +4,8 @@ public class KumhoTire implements Tire{
 
 	@Override
 	public void roll() {
-		System.out.println("±İÈ£Å¸ÀÌ¾î°¡ ±¼·¯°©´Ï´Ù.");
+		System.out.println("ê¸ˆí˜¸íƒ€ì´ì–´ êµ´ëŸ¬ê°");
+		
 	}
 
 }

@@ -1,7 +1,5 @@
 package com.mycompany.myapp.exam07;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,11 +53,12 @@ public class Exam07Controller {
 	@RequestMapping("/method5")
 	public String method5(Model model) {
 		List<Board> list = new ArrayList<>();
+		
 		for(int i=1; i<=5; i++) {
 			Board board = new Board();
 			board.setBno(i);
-			board.setTitle("제목: " + i);
-			board.setContent("내용: " + i);
+			board.setTitle("제목" + i);
+			board.setContent("내용" + i);
 			board.setHitcount(1);
 			list.add(board);
 		}
@@ -68,3 +67,12 @@ public class Exam07Controller {
 		return "exam07/usedata";
 	}
 }
+
+
+
+
+
+
+
+
+

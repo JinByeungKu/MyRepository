@@ -2,21 +2,21 @@ package ch12.exam07;
 
 public class YieldExample {
 	public static void main(String[] args) {
-		ThreadA threadA = new ThreadA();
+		ThreadA threadA = new ThreadA(); // 쓰레드 객체를 만든다.
 		ThreadB threadB = new ThreadB();
-		
-		threadA.start();   //실행대기
+
+		threadA.start();
 		threadB.start();
-		
-		//실행하고 대기하고 실행하고 대기하고를 반복
-		try {Thread.sleep(3000);} catch (InterruptedException e) {}
-		threadA.work = Work.PAUSE;
-		
-		try {Thread.sleep(3000);} catch (InterruptedException e) {}
-		threadA.work = Work.CONTINUE;
-		
-		try {Thread.sleep(3000);} catch (InterruptedException e) {}
-		threadA.stop = true;       //터미네이트 상태로 만든다.
-		threadB.stop = true;
+
+		try {Thread.sleep(3000);} catch (InterruptedException e) {	} // Thread 3초간 잠재움
+		threadA.work = Work.PAUAE;// threadA의 work 값을 false로 바꾼다
+
+		try {Thread.sleep(3000);} catch (InterruptedException e) {} // Thread 3초간 잠재움
+		threadA.work = Work.CONTINUE;// threadA의 work 값을 false로 바꾼다
+
+		try {Thread.sleep(3000);} catch (InterruptedException e) {} // Thread 3초간 잠재움
+		threadA.stop = true;// threadA 종료
+		threadB.stop = true;// threadB 종료
+
 	}
 }

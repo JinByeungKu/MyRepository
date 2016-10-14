@@ -1,9 +1,15 @@
 package ch07.exam01;
 
-public class Car extends Machine{
+public class Car extends Machine {
+
+	// Field
 	
-	public Car() {
-		System.out.println("Car() ½ÇÇàµÊ");
+	// Construtor
+	public Car(){
+		System.out.println("Car() ì‹¤í–‰ë¨");
 	}
 	
+	// Method
+
+
 }
