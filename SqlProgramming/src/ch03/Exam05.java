@@ -18,7 +18,7 @@ public class Exam05 {
 			String name = scanner.nextLine();
 			List<Employee> result = getList(name);
 			for(Employee emp : result) {
-				System.out.println(emp.getEmpno() + " | " + emp.getEname());
+				System.out.println(emp.getEmpno() + ":" + emp.getEname());
 			}
 		}
 	}

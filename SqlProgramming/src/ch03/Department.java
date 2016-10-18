@@ -4,7 +4,7 @@ public class Department {
 	private int deptno;
 	private String dname;
 	private String loc;
-	
+
 	public int getDeptno() {
 		return deptno;
 	}
@@ -23,6 +23,6 @@ public class Department {
 	public void setLoc(String loc) {
 		this.loc = loc;
 	}
-
+	
 	
 }
