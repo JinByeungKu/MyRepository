@@ -14,3 +14,16 @@ create table board (
   bhitcount number(5)null,
   bdate date null
 );
+
+-- Section02 테이블의 구조를 변경하는 ALTER TABLE 문
+alter table member add email varchar(100)null;
+alter table member modify email varchar(50);
+alter table member drop email;
+
+-- Section03 테이블 명을 변경하는 RENAME문
+alter table member rename to member2;
+alter table member2 rename to member;
+
+-- Section04 테이블 삭제하는 DROP TABLE문
+drop table member;
+drop table board;
