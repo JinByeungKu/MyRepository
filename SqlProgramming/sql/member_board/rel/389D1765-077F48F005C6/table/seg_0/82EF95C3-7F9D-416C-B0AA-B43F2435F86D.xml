@@ -30,6 +30,17 @@
 <ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="mpassword" id="75F3FB8A-CB6E-887B-FD41-51EEA2E87031">
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-20 06:25:38 UTC</createdTime>
+<ownerDesignName>member_board</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="mage" id="E4358A12-2414-0B43-AF91-0303A659E9B0">
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-20 05:41:23 UTC</createdTime>
