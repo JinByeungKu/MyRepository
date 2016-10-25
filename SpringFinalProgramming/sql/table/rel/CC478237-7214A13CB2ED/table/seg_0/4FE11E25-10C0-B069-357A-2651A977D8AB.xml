@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4FE11E25-10C0-B069-357A-2651A977D8AB" schemaObject="D3D2B7E6-857B-F877-CA78-C37B681BAD2B" name="MEMBER">
+<sourceConnName>localhost_orcl_tester1</sourceConnName>
+<sourceObjSchema>TESTER1</sourceObjSchema>
+<sourceObjName>MEMBER</sourceObjName>
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:34 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MID" id="0D350857-8619-4B50-D88A-04B38F25A6B3">
+<sourceConnName>localhost_orcl_tester1</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>MID</sourceObjName>
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:34 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MNAME" id="0363871A-2A34-295E-B151-BE624DD92197">
+<sourceConnName>localhost_orcl_tester1</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>MNAME</sourceObjName>
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:34 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MPASSWORD" id="E05EEC2F-3C76-4D45-D048-C1A782DBBDCB">
+<sourceConnName>localhost_orcl_tester1</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>MPASSWORD</sourceObjName>
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:34 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MAGE" id="8D304BAB-FF4F-F917-F44D-FAC30EAAF241">
+<sourceConnName>localhost_orcl_tester1</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>MAGE</sourceObjName>
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:34 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MBIRTH" id="82EF78D9-7CDB-A397-5136-3E879FEB540F">
+<sourceConnName>localhost_orcl_tester1</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>MBIRTH</sourceObjName>
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:34 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7F644485-5BB8-00EE-4A23-7C0FF12559BD" name="PK_MEMBER_MID">
+<sourceConnName>localhost_orcl_tester1</sourceConnName>
+<sourceObjSchema>TESTER1</sourceObjSchema>
+<sourceObjName>PK_MEMBER_MID</sourceObjName>
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:34 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0D350857-8619-4B50-D88A-04B38F25A6B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F409CB97-027F-53CC-AFA9-5C56A59B47A3" schemaObject="D3D2B7E6-857B-F877-CA78-C37B681BAD2B" name="PK_MEMBER_MID">
+<sourceConnName>localhost_orcl_tester1</sourceConnName>
+<sourceObjSchema>TESTER1</sourceObjSchema>
+<sourceObjName>PK_MEMBER_MID</sourceObjName>
+<createdBy>Administrator</createdBy>
+<createdTime>2016-10-25 09:43:34 UTC</createdTime>
+<ownerDesignName>table</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0D350857-8619-4B50-D88A-04B38F25A6B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
