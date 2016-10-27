@@ -1,6 +1,7 @@
 package com.mycompany.myweb.dto;
 
 public class Member {
+
 	private String mid;
 	private String mname;
 	private String mpassword;
@@ -44,5 +45,6 @@ public class Member {
 	public void setMemail(String memail) {
 		this.memail = memail;
 	}
+	
 	
 }
