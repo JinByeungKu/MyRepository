@@ -10,7 +10,7 @@
 	<body>
 		<h1>SpringFinalProgramming</h1> 
 		<hr/><br/>
-		<h3>
+		
 		1.  <c:if test="${login==null}">
 				<a href="<%=pageContext.getServletContext().getContextPath() %>/member/login">로그인</a><br/>
 		    </c:if>

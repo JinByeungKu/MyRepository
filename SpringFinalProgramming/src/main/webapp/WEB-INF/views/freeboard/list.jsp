@@ -48,7 +48,7 @@
 			<div style="width: 600px">
 			<a href="list?pageNo=1">[처음]</a>
 			<c:if test="${groupNo>1}">
-				<a href="list?pageNo=${startPageNo-pagesPerGroup}">[이전]</a>
+				<a href="list?pageNo=${startPageNo-1}">[이전]</a>
 			</c:if>
 	
 			<c:forEach var="i" begin="${startPageNo}" end="${endPageNo}">
