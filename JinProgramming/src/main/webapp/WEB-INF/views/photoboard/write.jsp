@@ -12,11 +12,11 @@
 			<table>
 				<tr>
 					<td style="background-color:orange; width:70px">제목</td>
-					<td><input type="text" name="btitle" style="width:600px;" value="${freeboard.btitle}"/></td>
+					<td><input type="text" name="btitle" style="width:600px;" value="${photoboard.btitle}"/></td>
 				</tr>
 				<tr>
 					<td style="background-color:orange; width:70px">내용</td>
-					<td><textarea name="bcontent" style="width:600px; height:200px;">${freeboard.bcontent}</textarea></td>
+					<td><textarea name="bcontent" style="width:600px; height:200px;">${photoboard.bcontent}</textarea></td>
 				</tr>
 				<tr>
 					<td style="background-color:orange; width:70px">사진</td>
