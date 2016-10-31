@@ -135,7 +135,7 @@ public class PhotoBoardController {
 		    
 		   @RequestMapping(value="/modify", method=RequestMethod.GET)
 		   public String modifyForm(int bno, Model model) {
-			   PhotoBoard freeBoard = photoBoardService.info(bno);
+			   PhotoBoard photoBoard = photoBoardService.info(bno);
 			   model.addAttribute("photoboard", photoBoard);
 			   return "photoboard/modify";
 		   }
