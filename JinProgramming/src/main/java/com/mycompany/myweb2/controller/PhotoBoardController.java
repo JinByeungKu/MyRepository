@@ -1,4 +1,4 @@
-package com.mycompany.myweb.controller;
+package com.mycompany.myweb2.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -17,8 +17,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.mycompany.myweb.dto.PhotoBoard;
-import com.mycompany.myweb.service.PhotoBoardService;
+import com.mycompany.myweb2.dto.PhotoBoard;
+import com.mycompany.myweb2.service.PhotoBoardService;
 
 @Controller
 @RequestMapping("/photoboard")

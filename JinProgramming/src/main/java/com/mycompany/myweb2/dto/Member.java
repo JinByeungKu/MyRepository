@@ -1,4 +1,4 @@
-package com.mycompany.myweb.dto;
+package com.mycompany.myweb2.dto;
 
 public class Member {
 

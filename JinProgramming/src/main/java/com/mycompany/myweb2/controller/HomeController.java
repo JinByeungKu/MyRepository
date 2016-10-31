@@ -1,4 +1,4 @@
-package com.mycompany.myweb.controller;
+package com.mycompany.myweb2.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

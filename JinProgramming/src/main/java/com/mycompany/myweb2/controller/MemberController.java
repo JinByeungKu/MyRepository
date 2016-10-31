@@ -1,4 +1,4 @@
-package com.mycompany.myweb.controller;
+package com.mycompany.myweb2.controller;
 
 import javax.servlet.http.HttpSession;
 
@@ -8,8 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.mycompany.myweb.dto.Member;
-import com.mycompany.myweb.service.MemberService;
+import com.mycompany.myweb2.dto.Member;
+import com.mycompany.myweb2.service.MemberService;
 
 @Controller
 @RequestMapping("/member")

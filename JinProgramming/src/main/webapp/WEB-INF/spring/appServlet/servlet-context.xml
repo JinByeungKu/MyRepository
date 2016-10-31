@@ -19,7 +19,7 @@
       <beans:property name="suffix" value=".jsp" />
    </beans:bean>
 
-   <context:component-scan base-package="com.mycompany.myweb" />
+   <context:component-scan base-package="com.mycompany.myweb2" />
 
    <!-- Connection Pool -->
    <!-- 소규모 프로젝트에 적합한 방법: 어플리케이션에 connection 풀을 가지고잇다. -->

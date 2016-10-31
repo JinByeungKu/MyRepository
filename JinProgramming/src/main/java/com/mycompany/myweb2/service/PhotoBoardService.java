@@ -1,16 +1,15 @@
-package com.mycompany.myweb.service;
+package com.mycompany.myweb2.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.mycompany.myweb.dao.FreeBoardDao;
-import com.mycompany.myweb.dto.FreeBoard;
+import com.mycompany.myweb2.dao.PhotoBoardDao;
+import com.mycompany.myweb2.dto.PhotoBoard;
 
 @Component
-public class FreeBoardService {
-
+public class PhotoBoardService {
    public static final int WRITE_SUCESS=0;
    public static final int WRITE_FAIL=1;
    
@@ -21,34 +20,34 @@ public class FreeBoardService {
    public static final int REMOVE_FAIL=1;
    
    @Autowired
-   private FreeBoardDao freeBoardDao;
+   private PhotoBoardDao photoBoardDao;
    
-   public List<FreeBoard> list(int pageNo, int rowsPerPage){
-      return freeBoardDao.selectByPage(pageNo, rowsPerPage);
+   public List<PhotoBoard> list(int pageNo, int rowsPerPage){
+      return photoBoardDao.selectByPage(pageNo, rowsPerPage);
    }
    
-   public int write(FreeBoard freeBoard){
-      int row = freeBoardDao.insert(freeBoard);
+   public int write(PhotoBoard photoBoard){
+      int row = photoBoardDao.insert(photoBoard);
       return WRITE_SUCESS;
    }
    
-   public int modify(FreeBoard freeBoard){
-      int row = freeBoardDao.update(freeBoard);
+   public int modify(PhotoBoard photoBoard){
+      int row = photoBoardDao.update(photoBoard);
       if(row==0){return MODIFY_FAIL;}
       return MODIFY_SUCESS;      
    }
    
    public int remove(int bno){
-      int row = freeBoardDao.delete(bno);
+      int row = photoBoardDao.delete(bno);
       if(row==0){return REMOVE_FAIL;};
       return REMOVE_SUCESS;
    }
    
-   public FreeBoard info(int bno){
-      return freeBoardDao.selectByBno(bno);
+   public PhotoBoard info(int bno){
+     return photoBoardDao.selectByBno(bno);
    }
-   
+
    public int getCount() {
-	   return freeBoardDao.count();
+	   return photoBoardDao.count();
    }
 }

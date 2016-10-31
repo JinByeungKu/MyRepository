@@ -1,4 +1,4 @@
-package com.mycompany.myweb.dao;
+package com.mycompany.myweb2.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,8 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
-import com.mycompany.myweb.dto.PhotoBoard;
-import com.mycompany.myweb.dto.PhotoBoard;
+import com.mycompany.myweb2.dto.PhotoBoard;
 
 @Component
 public class PhotoBoardDao {
@@ -87,13 +86,9 @@ public class PhotoBoardDao {
 				);
 		return list;
 	}
-	//rowMpper : 각 컬럼의 값을 연결시켜주기 위해서(컬럼과 필드를 맵핑시켜주기위해서 사용한다)
 	
 	public int count(){
 		String sql="select count(*) from freeboard";
-		//qyeryForObject--
-		//--sql문이 반드시 하나의 행을 가져오는 경우라면 사용해도된다.
-		//--값을 가져와서 객체의 타입.class를 넣어주면 자동 언박싱을 통해서 int타입의 count에 넣어준다
 		int count = jdbcTemplate.queryForObject(sql, Integer.class);
 		return count;
 	}

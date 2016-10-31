@@ -1,4 +1,4 @@
-package com.mycompany.myweb.dao;
+package com.mycompany.myweb2.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
-import com.mycompany.myweb.dto.Member;
+import com.mycompany.myweb2.dto.Member;
 
 @Component
 public class MemberDao {

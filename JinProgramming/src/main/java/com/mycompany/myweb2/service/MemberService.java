@@ -1,12 +1,12 @@
-package com.mycompany.myweb.service;
+package com.mycompany.myweb2.service;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.mycompany.myweb.dao.MemberDao;
-import com.mycompany.myweb.dto.Member;
+import com.mycompany.myweb2.dao.MemberDao;
+import com.mycompany.myweb2.dto.Member;
 
 @Component
 public class MemberService {
@@ -30,7 +30,6 @@ public class MemberService {
    @Autowired
    private MemberDao memberDao;
    
-   //정상실행과 예외를 가지고 판단한다면 리턴타입을 void로 한다.
    public int join(Member member){
       memberDao.insert(member);
       return JOIN_SUCCESS;
@@ -49,7 +48,7 @@ public class MemberService {
    
    
    public String findMpassword(String mid, String memail){
-      Member member = memberDao.selectByMid(mid); //mid존재를 검사한다.
+      Member member = memberDao.selectByMid(mid); //
       if(member==null){return null;}
       if(member.getMemail().equals(memail)==false)return null;
       return member.getMpassword();
@@ -83,7 +82,7 @@ public class MemberService {
       memberDao.delete(mid);
       logout(mid);
       return WITHDRAW_SUCCESS;
-   } //2가지 경우지만 예외가 없을때
+   }
    
    
    public boolean isMid(String mid){
@@ -91,12 +90,6 @@ public class MemberService {
       if(member == null){ return false; }
       return true;
    }
-   
-   //서비스에 무언가 실행햇는데 2가지이상이 발생한다면 상수를사용해서 처리한다.
-   //2가지 이지만 한가지가 예외일때는 void만으로도 처리 가능하다.
-   
-   //트랜젝션처리는 service에서 한다.
-   
 }
 
 
