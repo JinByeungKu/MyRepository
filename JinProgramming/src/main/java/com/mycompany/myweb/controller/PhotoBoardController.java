@@ -137,7 +137,7 @@ public class PhotoBoardController {
 			   return "photoboard/info";
 		   }
 		   
-		   /*
+		   /* 
 		   @RequestMapping(value="/modify", method=RequestMethod.GET)
 		   public String modifyForm(int bno, Model model) {
 			   FreeBoard freeBoard = photoBoardService.info(bno);
