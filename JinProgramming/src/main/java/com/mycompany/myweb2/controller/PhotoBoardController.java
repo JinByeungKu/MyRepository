@@ -26,6 +26,7 @@ public class PhotoBoardController {
 
 	@Autowired
 	private PhotoBoardService photoBoardService;
+	private Object photoBoard;
 
 	 @RequestMapping("/list")
 	   public String list(String pageNo, Model model, HttpSession session){
@@ -131,17 +132,17 @@ public class PhotoBoardController {
 			   return "photoboard/info";
 		   }
 		   
-		   /* 
+		    
 		   @RequestMapping(value="/modify", method=RequestMethod.GET)
 		   public String modifyForm(int bno, Model model) {
-			   FreeBoard freeBoard = photoBoardService.info(bno);
+			   PhotoBoard freeBoard = photoBoardService.info(bno);
 			   model.addAttribute("photoboard", photoBoard);
 			   return "photoboard/modify";
 		   }
 		   
 		   @RequestMapping(value="/modify", method=RequestMethod.POST)
-		   public String modify(FreeBoard photoBoard) {
-			   FreeBoard dbPhotoBoard = photoBoardService.info(photoBoard.getBno());
+		   public String modify(PhotoBoard photoBoard) {
+			   PhotoBoard dbPhotoBoard = photoBoardService.info(photoBoard.getBno());
 			   photoBoard.setBhitcount(dbPhotoBoard.getBhitcount());
 			   photoBoardService.modify(photoBoard);
 			   return "redirect:/photoboard/list";
@@ -151,5 +152,5 @@ public class PhotoBoardController {
 		   public String remove(int bno) {
 			   photoBoardService.remove(bno);
 			   return "redirect:/photoboard/list";
-		   }*/
+		   }
 }
