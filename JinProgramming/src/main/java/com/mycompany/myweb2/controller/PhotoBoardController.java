@@ -102,12 +102,6 @@ public class PhotoBoardController {
 	public void showPhoto(String savedfile, HttpServletRequest request, HttpServletResponse response) {
 		try {
 		String fileName = savedfile;
-		/*
-		//브라우저에서 보여주지 않고 강제로 다운로드할 경우
-		String fileName = savedfile;
-		fileName = URLEncoder.encode(fileName, "UTF-8");
-		response.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
-		*/
 		
 		String mimeType = request.getServletContext().getMimeType(fileName);
 		response.setContentType(mimeType);
