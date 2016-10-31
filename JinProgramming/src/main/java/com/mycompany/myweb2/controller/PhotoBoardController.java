@@ -153,4 +153,5 @@ public class PhotoBoardController {
 			   photoBoardService.remove(bno);
 			   return "redirect:/photoboard/list";
 		   }
+		   
 }
