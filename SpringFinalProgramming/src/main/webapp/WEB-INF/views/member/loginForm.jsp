@@ -5,6 +5,16 @@
 	<head>
 		<meta charset="UTF-8">
 	</head>
+	<link
+	href="${pageContext.servletContext.contextPath}/resources/bootstrap-3.3/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="${pageContext.servletContext.contextPath}/resources/css/justified-nav.css"
+	rel="stylesheet">
+<script type="text/javascript"
+	src="${pageContext.servletContext.contextPath}/resources/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.servletContext.contextPath}/resources/bootstrap-3.3/css/bootstrap.min.css"></script>
 	<body>
 		로그인
 		<hr/>
