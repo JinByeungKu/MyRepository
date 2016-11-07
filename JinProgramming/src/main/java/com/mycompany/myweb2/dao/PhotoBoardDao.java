@@ -29,8 +29,13 @@ public class PhotoBoardDao {
 
 	public int update(PhotoBoard photoBoard) {
 		String sql = "update photoboard set btitle=?, bcontent=?, bhitcount=?, originalfile=?, savedfile=?, mimetype=? where bno=?";
-		int row = jdbcTemplate.update(sql, photoBoard.getBtitle(), photoBoard.getBcontent(), photoBoard.getBhitcount(),photoBoard.getOriginalfile(),photoBoard.getSavedfile(),photoBoard.getMimetype()
-				,photoBoard.getBno());
+		int row = jdbcTemplate.update(sql, photoBoard.getBtitle(),
+				photoBoard.getBcontent(),
+				photoBoard.getBhitcount(),
+				photoBoard.getOriginalfile(),
+				photoBoard.getSavedfile(),
+				photoBoard.getMimetype(),
+				photoBoard.getBno());
 		return row;
 	}
 
@@ -39,7 +44,7 @@ public class PhotoBoardDao {
 		int row = jdbcTemplate.update(sql, bno);
 		return row;
 	}
-	//rowMpper : 각 컬럼의 값을 연결시켜주기 위해서(컬럼과 필드를 맵핑시켜주기위해서 사용한다)
+
 	public PhotoBoard selectByBno(int bno) {
 		String sql = "select bno, btitle, bcontent, bwriter, bhitcount, bdate, originalfile, savedfile, mimetype from photoboard where bno=?";
 		List<PhotoBoard> list = jdbcTemplate.query(sql, new Object[] { bno }, new RowMapper<PhotoBoard>() {

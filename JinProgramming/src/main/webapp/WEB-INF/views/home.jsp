@@ -8,7 +8,7 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
-		<h1>SpringFinalProgramming</h1> 
+		<h1>JinProgramming</h1> 
 		<hr/><br/>
 		
 		1.  <c:if test="${login==null}">
@@ -21,8 +21,5 @@
 		  <c:if test="${login!=null}">
 		2. <a href="${pageContext.servletContext.contextPath}/photoboard/list">포토 게시판</a><br/>
 		  </c:if>
-		
-		
-		</h3>
 		</body>
 </html>

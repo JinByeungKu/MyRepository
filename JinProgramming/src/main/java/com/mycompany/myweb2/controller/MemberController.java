@@ -52,7 +52,7 @@ public class MemberController {
          return "member/findMidForm";
       }
       session.setAttribute("findMid", mid);
-      return "redirct:/member/login";
+      return "redirect:/member/login";
    }
       
    @RequestMapping(value="/join", method=RequestMethod.GET)
@@ -89,28 +89,4 @@ public class MemberController {
       model.addAttribute("member",member);
       return"member/info";
    }
-   
-
-   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

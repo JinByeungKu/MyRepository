@@ -1,7 +1,5 @@
 package com.mycompany.myweb2.service;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -48,7 +46,7 @@ public class MemberService {
    
    
    public String findMpassword(String mid, String memail){
-      Member member = memberDao.selectByMid(mid); //
+      Member member = memberDao.selectByMid(mid); 
       if(member==null){return null;}
       if(member.getMemail().equals(memail)==false)return null;
       return member.getMpassword();
@@ -72,7 +70,7 @@ public class MemberService {
       if(dbMember.getMpassword().equals(member.getMpassword())==false){return MODIFY_FAIL;}
       int row = memberDao.update(member);
        if(row!=1){return MODIFY_FAIL;}
-       return MODIFY_FAIL;    
+       return MODIFY_FAIL;
    }
    
    
@@ -91,18 +89,3 @@ public class MemberService {
       return true;
    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
