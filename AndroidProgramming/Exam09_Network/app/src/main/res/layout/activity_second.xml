@@ -17,8 +17,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            app:srcCompat="@drawable/bistroseoul"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            android:id="@+id/imageLarge" />
 
         <TextView
             android:text="BISTRO SEOUL"
@@ -106,22 +106,10 @@
                     android:textColor="@color/colorAccent" />
             </LinearLayout>
         </LinearLayout>
-
     </RelativeLayout>
 
-    <ScrollView
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:id="@+id/itemContainer2"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginTop="10dp">
-
-        </LinearLayout>
-    </ScrollView>
-
+        android:layout_height="match_parent"
+        android:id="@+id/foodList" />
 </LinearLayout>
